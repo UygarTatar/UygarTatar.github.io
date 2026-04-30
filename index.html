@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { background-color: #1a1a1a; color: #e5e5e5; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
         /* Geometrik Banner Arka Planı */
         .hero-banner {
             background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 50%, #064e3b 100%);
@@ -20,22 +21,46 @@
             background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
             opacity: 0.1;
         }
-        .nav-link { cursor: pointer; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; font-weight: 600; transition: color 0.3s; }
+        
+        /* Menü Animasyonları */
+        .nav-link { 
+            cursor: pointer; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            font-size: 0.85rem; 
+            font-weight: 600; 
+            transition: all 0.3s ease; 
+            position: relative;
+            padding-bottom: 4px;
+        }
         .nav-link:hover, .nav-link.active { color: #60a5fa; }
+        .nav-link::after {
+            content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 50%;
+            background-color: #60a5fa; transition: all 0.3s ease; transform: translateX(-50%);
+        }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+        /* Sayfa Geçiş Animasyonu */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        /* Kart Animasyonları */
         .project-card { transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
         .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Sticky Navigation -->
+    <!-- Sticky Navigation (Ortalanmış) -->
     <nav class="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 border-b border-gray-800">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-center md:justify-between items-center h-16">
-                <div class="hidden md:block text-gray-400 font-bold tracking-widest text-sm">
-                    DATA-DRIVEN ENGINEERING
-                </div>
-                <div class="flex space-x-6 text-gray-400">
+            <div class="flex justify-center items-center h-16">
+                <div class="flex space-x-8 text-gray-400">
                     <a onclick="switchTab('portfolio')" id="nav-portfolio" class="nav-link active">Portfolio</a>
                     <a onclick="switchTab('resume')" id="nav-resume" class="nav-link">Resume</a>
                     <a onclick="switchTab('bio')" id="nav-bio" class="nav-link">Bio</a>
@@ -46,41 +71,45 @@
     </nav>
 
     <!-- Header Banner -->
-    <header class="hero-banner pt-28 pb-16 text-center border-b border-gray-800">
-        <div class="inline-block border-4 border-white/20 p-4 mb-6 bg-black/30 backdrop-blur-sm z-10 relative">
+    <header class="hero-banner pt-32 pb-24 text-center border-b border-gray-800">
+        <div class="inline-block border-4 border-white/20 p-4 bg-black/30 backdrop-blur-sm z-10 relative shadow-2xl">
             <h1 class="text-4xl md:text-5xl font-light tracking-widest text-white uppercase">Uygar Tatar</h1>
         </div>
-        <h2 class="text-xl md:text-3xl font-light text-gray-300 mt-4 relative z-10">
-            Scalable architecture, engaging game design
-        </h2>
     </header>
 
     <!-- Main Content Area -->
     <main class="max-w-5xl mx-auto px-6 py-12">
 
         <!-- ==================== PORTFOLIO TAB ==================== -->
-        <section id="portfolio" class="tab-content">
+        <section id="portfolio" class="tab-content fade-in">
             
-            <!-- Grid View -->
             <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Project 1 -->
+                <!-- Project 1: Press Factory Tycoon -->
                 <div class="project-card bg-gray-800 rounded-lg overflow-hidden group" onclick="showProjectDetail('proj-press')">
-                    <div class="h-48 bg-blue-900 relative flex items-center justify-center">
-                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-all"></div>
+                    <div class="h-48 relative flex items-center justify-center bg-gray-900 overflow-hidden">
+                        <!-- RESİM EKLEME YERİ 1 -->
+                        <img src="PressFactoryIcon 2.png" alt="Press Factory" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity">
+                        <div class="absolute inset-0 bg-blue-900/60 mix-blend-multiply"></div>
                         <h3 class="text-2xl font-bold text-white relative z-10 text-center px-4">PRESS FACTORY TYCOON</h3>
                     </div>
                 </div>
-                <!-- Project 2 -->
+
+                <!-- Project 2: Movie Recommender -->
                 <div class="project-card bg-gray-800 rounded-lg overflow-hidden group" onclick="showProjectDetail('proj-movie')">
-                    <div class="h-48 bg-purple-900 relative flex items-center justify-center">
-                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-all"></div>
+                    <div class="h-48 relative flex items-center justify-center bg-gray-900 overflow-hidden">
+                         <!-- RESİM EKLEME YERİ 2 -->
+                        <!-- <img src="movie-cover.jpg" alt="Movie Recommender" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity"> -->
+                        <div class="absolute inset-0 bg-purple-900/60 mix-blend-multiply"></div>
                         <h3 class="text-2xl font-bold text-white relative z-10 text-center px-4">MOVIE RECOMMENDER</h3>
                     </div>
                 </div>
-                <!-- Project 3 -->
+
+                <!-- Project 3: AWS -->
                 <div class="project-card bg-gray-800 rounded-lg overflow-hidden group" onclick="showProjectDetail('proj-aws')">
-                    <div class="h-48 bg-orange-900 relative flex items-center justify-center">
-                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-all"></div>
+                    <div class="h-48 relative flex items-center justify-center bg-gray-900 overflow-hidden">
+                         <!-- RESİM EKLEME YERİ 3 -->
+                        <!-- <img src="aws-cover.jpg" alt="AWS Infra" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity"> -->
+                        <div class="absolute inset-0 bg-orange-900/60 mix-blend-multiply"></div>
                         <h3 class="text-2xl font-bold text-white relative z-10 text-center px-4">AWS CLOUD INFRA</h3>
                     </div>
                 </div>
@@ -88,27 +117,36 @@
 
             <!-- Detail View: Press Factory Tycoon -->
             <div id="proj-press" class="project-detail hidden">
-                <button onclick="backToGrid()" class="text-blue-400 hover:text-blue-300 mb-8 flex items-center gap-2">
+                <button onclick="backToGrid()" class="text-blue-400 hover:text-blue-300 mb-8 flex items-center gap-2 transition-colors">
                     ← Back to Portfolio
                 </button>
                 <h2 class="text-3xl font-bold mb-8 text-center">Press Factory Tycoon</h2>
                 
-                <!-- Video/Image Placeholder -->
-                <div class="w-full h-64 md:h-96 bg-gray-800 rounded-xl flex items-center justify-center mb-8 border border-gray-700">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 cursor-pointer hover:bg-red-500 transition-colors">
-                            ▶
+                <!-- VİDEO EKLEME YERİ -->
+                <div class="w-full bg-gray-800 rounded-xl overflow-hidden mb-8 border border-gray-700 aspect-video relative shadow-2xl">
+                    
+                    <!-- Kendi MP4 videonu eklemek için aşağıdaki satırları kullan -->
+                    <!--
+                    <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                        <source src="oyun-videosu.mp4" type="video/mp4">
+                    </video>
+                    -->
+                    
+                    <!-- Video eklenene kadar duracak Placeholder -->
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-500">
+                        <div class="w-16 h-16 bg-blue-600/20 text-blue-500 rounded-full flex items-center justify-center mx-auto mb-4 border border-blue-500/30">
+                            <span class="text-2xl ml-1">▶</span>
                         </div>
-                        <p class="text-gray-400">Gameplay Video / GIF Here</p>
+                        <p class="font-mono text-sm">Gameplay Video (MP4) goes here</p>
                     </div>
                 </div>
 
                 <div class="text-center mb-10">
-                    <a href="#" class="text-blue-400 hover:underline">Download / Play (Coming Soon)</a>
+                    <a href="#" class="text-blue-400 hover:text-blue-300 hover:underline transition-colors font-semibold">Download / Play (Coming Soon)</a>
                 </div>
 
-                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2">Responsibilities</h3>
-                <ul class="list-disc pl-5 space-y-3 text-gray-300 leading-relaxed">
+                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">Responsibilities</h3>
+                <ul class="list-disc pl-5 space-y-3 text-gray-400 leading-relaxed">
                     <li>Led the development of a mobile idle game using Unity and C#, from initial concept to monetization integration.</li>
                     <li>Designed and balanced the core economic loop, ensuring satisfying progression curves and scalable cost/revenue multipliers.</li>
                     <li>Integrated custom analytics and metrics to track player funnels and identify bottlenecks in the gameplay loop.</li>
@@ -116,31 +154,29 @@
                 </ul>
             </div>
 
-            <!-- Detail View: Movie Recommender (Sonra doldurulacak) -->
+            <!-- Detail View: Movie Recommender -->
             <div id="proj-movie" class="project-detail hidden">
                 <button onclick="backToGrid()" class="text-blue-400 hover:text-blue-300 mb-8 flex items-center gap-2">← Back to Portfolio</button>
                 <h2 class="text-3xl font-bold mb-8 text-center">Social Movie Recommendation Project</h2>
-                <div class="w-full h-64 bg-gray-800 rounded-xl flex items-center justify-center mb-8"><p class="text-gray-500">Architecture Diagram Here</p></div>
                 <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2">Overview</h3>
-                <p class="text-gray-300">İçeriğini sonra birlikte dolduracağız.</p>
+                <p class="text-gray-400">İçeriğini sonra birlikte dolduracağız.</p>
             </div>
 
-            <!-- Detail View: AWS Infra (Sonra doldurulacak) -->
+            <!-- Detail View: AWS Infra -->
             <div id="proj-aws" class="project-detail hidden">
                 <button onclick="backToGrid()" class="text-blue-400 hover:text-blue-300 mb-8 flex items-center gap-2">← Back to Portfolio</button>
                 <h2 class="text-3xl font-bold mb-8 text-center">AWS Cloud Infrastructure</h2>
-                <div class="w-full h-64 bg-gray-800 rounded-xl flex items-center justify-center mb-8"><p class="text-gray-500">Cloud Topology Here</p></div>
                 <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2">Overview</h3>
-                <p class="text-gray-300">İçeriğini sonra birlikte dolduracağız.</p>
+                <p class="text-gray-400">İçeriğini sonra birlikte dolduracağız.</p>
             </div>
-
         </section>
 
         <!-- ==================== RESUME TAB ==================== -->
         <section id="resume" class="tab-content hidden max-w-3xl mx-auto">
             <div class="flex justify-between items-center mb-10 border-b border-gray-800 pb-6">
                 <h2 class="text-4xl font-light">Resume</h2>
-                <a href="#" target="_blank" class="bg-gray-800 hover:bg-gray-700 text-white py-2 px-6 rounded-full text-sm font-semibold transition-colors border border-gray-600">
+                <!-- CV İNDİRME LİNKİ BURADA -->
+                <a href="uygar-cv.pdf" target="_blank" class="bg-gray-800 hover:bg-gray-700 text-white py-2 px-6 rounded-full text-sm font-semibold transition-all hover:scale-105 border border-gray-600 shadow-lg">
                     Download CV
                 </a>
             </div>
@@ -152,46 +188,53 @@
 
             <h3 class="text-2xl font-bold mb-6 text-blue-400">Experience</h3>
             
-            <div class="mb-8">
-                <h4 class="text-lg font-bold">Waterproof Games – Founder & Unity Developer, Oct 2025 – Present</h4>
-                <ul class="list-disc pl-5 mt-3 space-y-2 text-gray-300">
+            <div class="mb-8 relative pl-6 border-l-2 border-gray-800 hover:border-blue-500 transition-colors">
+                <div class="absolute w-3 h-3 bg-blue-500 rounded-full -left-[7px] top-2"></div>
+                <h4 class="text-lg font-bold text-gray-200">Waterproof Games – Founder & Unity Developer</h4>
+                <p class="text-sm text-gray-500 mb-3">Oct 2025 – Present</p>
+                <ul class="list-disc pl-5 space-y-2 text-gray-400 text-sm">
                     <li>Defining the design vision and technical architecture for mobile titles like <em>Press Factory Tycoon</em>.</li>
                     <li>Leading gameplay & systems engineering, balancing economy loops to drive hyper-casual success.</li>
                     <li>Prototyping mechanics and integrating metrics/analytics to validate retention, guided by player data.</li>
                 </ul>
             </div>
 
-            <div class="mb-8">
-                <h4 class="text-lg font-bold">IFS – Software Engineering Intern, Late 2025</h4>
-                <ul class="list-disc pl-5 mt-3 space-y-2 text-gray-300">
+            <div class="mb-8 relative pl-6 border-l-2 border-gray-800 hover:border-blue-500 transition-colors">
+                <div class="absolute w-3 h-3 bg-blue-500 rounded-full -left-[7px] top-2"></div>
+                <h4 class="text-lg font-bold text-gray-200">IFS – Software Engineering Intern</h4>
+                <p class="text-sm text-gray-500 mb-3">Late 2025</p>
+                <ul class="list-disc pl-5 space-y-2 text-gray-400 text-sm">
                     <li>Completed a mandatory software engineering internship, gaining hands-on experience in corporate development environments.</li>
                     <li>Collaborated cross-functionally within the technical team to optimize internal processes and workflows.</li>
                 </ul>
             </div>
 
-            <div class="mb-10">
-                <h4 class="text-lg font-bold">Capstone Project – Full Stack Developer, 2025 – 2026</h4>
-                <ul class="list-disc pl-5 mt-3 space-y-2 text-gray-300">
+            <div class="mb-10 relative pl-6 border-l-2 border-gray-800 hover:border-blue-500 transition-colors">
+                <div class="absolute w-3 h-3 bg-blue-500 rounded-full -left-[7px] top-2"></div>
+                <h4 class="text-lg font-bold text-gray-200">Capstone Project – Full Stack Developer</h4>
+                <p class="text-sm text-gray-500 mb-3">2025 – 2026</p>
+                <ul class="list-disc pl-5 space-y-2 text-gray-400 text-sm">
                     <li>Engineered a comprehensive social movie recommendation system using advanced SVD algorithms.</li>
                     <li>Designed and managed database architectures utilizing PostgreSQL and MongoDB for high-speed data retrieval.</li>
                 </ul>
             </div>
 
             <h3 class="text-2xl font-bold mb-6 text-blue-400">Education</h3>
-            <div class="mb-4">
-                <h4 class="text-lg font-bold">Bahçeşehir University (BAU), Istanbul</h4>
-                <p class="text-gray-300 mt-1">B.S. Computer Engineering (Senior) | GPA: 3.60</p>
-                <p class="text-sm text-gray-400 mt-1">Achieved Department 2nd Rank</p>
+            <div class="mb-4 relative pl-6 border-l-2 border-gray-800 hover:border-blue-500 transition-colors">
+                <div class="absolute w-3 h-3 bg-blue-500 rounded-full -left-[7px] top-2"></div>
+                <h4 class="text-lg font-bold text-gray-200">Bahçeşehir University (BAU), Istanbul</h4>
+                <p class="text-gray-400 mt-1">B.S. Computer Engineering (Senior) | GPA: 3.60</p>
+                <p class="text-sm text-blue-400 mt-1 font-semibold">Achieved Department 2nd Rank</p>
             </div>
 
             <h3 class="text-2xl font-bold mt-10 mb-6 text-blue-400">Skills</h3>
-            <div class="grid grid-cols-2 gap-4 text-gray-300">
+            <div class="grid grid-cols-2 gap-4 text-gray-400 bg-gray-900/50 p-6 rounded-xl border border-gray-800">
                 <div>
-                    <strong class="text-white">Technical:</strong><br>
+                    <strong class="text-gray-200 block mb-2 border-b border-gray-700 pb-1">Technical</strong>
                     Unity (C#)<br> Node.js, Python<br> AWS Infrastructure (S3, EC2)<br> PostgreSQL & MongoDB
                 </div>
                 <div>
-                    <strong class="text-white">Design & Soft Skills:</strong><br>
+                    <strong class="text-gray-200 block mb-2 border-b border-gray-700 pb-1">Design & Soft Skills</strong>
                     Game Economy Design<br> Data-Driven Analytics<br> Clean Architecture<br> Problem Solving
                 </div>
             </div>
@@ -205,30 +248,35 @@
                 Computer Engineer and Game Developer with a passion for building scalable systems, hit mobile mechanics, and cloud infrastructures.
             </p>
 
-            <p class="text-gray-300 mb-6 leading-relaxed text-justify">
+            <p class="text-gray-400 mb-6 leading-relaxed text-justify">
                 I’m a passionate and experienced developer with a strong track record of delivering engaging gameplay and high-performing technical solutions. I bring a blend of engineering discipline and creative game design, collaborating closely with development tools like Unity and AWS to craft systems that excite users and drive results. From backend databases to frontend user interfaces, I take pride in shaping software that’s not only functional and optimized but also contributes meaningfully to user engagement. 
             </p>
 
-            <p class="text-gray-300 mb-10 leading-relaxed text-justify">
+            <p class="text-gray-400 mb-10 leading-relaxed text-justify">
                 Outside of coding and game development, I am deeply interested in the European automotive market, tracking performance mechanics, and I spend time optimizing my own health through specific longevity and fitness routines. I am also an avid sim racing enthusiast, bringing my love for precision and mechanics into virtual environments.
             </p>
 
-            <h3 class="text-2xl font-bold mb-4 text-blue-400">Hobbies & Interests:</h3>
-            <ul class="list-none space-y-2 text-gray-300 mb-10">
-                <li><strong class="text-white">Sim Racing:</strong> iRacing, Assetto Corsa (Rig enthusiast)</li>
-                <li><strong class="text-white">Automotive:</strong> European engineering, market analysis</li>
-                <li><strong class="text-white">Horology & Aesthetics:</strong> Stealth/Tactical watches and gear</li>
-                <li><strong class="text-white">Fitness:</strong> Intermittent fasting, metabolic health</li>
-            </ul>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-blue-400 border-b border-gray-800 pb-2">Hobbies & Interests</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><strong class="text-gray-200">Sim Racing:</strong> iRacing, Assetto Corsa (Rig enthusiast)</li>
+                        <li><strong class="text-gray-200">Automotive:</strong> European engineering, market analysis</li>
+                        <li><strong class="text-gray-200">Horology & Aesthetics:</strong> Stealth/Tactical watches and gear</li>
+                        <li><strong class="text-gray-200">Fitness:</strong> Intermittent fasting, metabolic health</li>
+                    </ul>
+                </div>
 
-            <h3 class="text-2xl font-bold mb-4 text-blue-400">What gets me excited about games & tech:</h3>
-            <ul class="list-disc pl-5 space-y-2 text-gray-300">
-                <li>Creating responsive, mathematically sound idle game economies.</li>
-                <li>Gaining efficiency through clean code and scalable cloud architectures.</li>
-                <li>Fulfilling and rewarding progression systems heavily backed by data analytics.</li>
-                <li>The intersection of hardware precision (sim rigs) and software engineering.</li>
-                <li>Building free-to-play mobile experiences that balance simplicity with deep mechanics.</li>
-            </ul>
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-blue-400 border-b border-gray-800 pb-2">What Excites Me</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-400 text-sm">
+                        <li>Creating mathematically sound idle game economies.</li>
+                        <li>Efficiency through clean code and scalable cloud architectures.</li>
+                        <li>Fulfilling progression systems backed by data analytics.</li>
+                        <li>The intersection of hardware precision and software engineering.</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <!-- ==================== CONTACT TAB ==================== -->
@@ -236,17 +284,20 @@
             <h2 class="text-4xl font-light mb-6">Let's Connect</h2>
             <p class="text-gray-400 mb-10">Whether it's about a potential role, a project collaboration, or talking about game economies, feel free to reach out.</p>
             
-            <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800">
-                <a href="mailto:your.email@example.com" class="block text-2xl font-bold text-blue-400 hover:text-blue-300 mb-6 transition-colors">
-                    hello@uygartatar.me
+            <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 shadow-2xl relative overflow-hidden">
+                <!-- Arkaplan Dekoru -->
+                <div class="absolute -top-24 -right-24 w-48 h-48 bg-blue-600/10 rounded-full blur-3xl"></div>
+                
+                <a href="mailto:uygartatar52@gmail.com" class="block text-3xl font-light text-white hover:text-blue-400 mb-8 transition-colors relative z-10">
+                    uygartatar52@gmail.com
                 </a>
                 
-                <div class="flex justify-center space-x-6 mt-8 border-t border-gray-800 pt-8">
-                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
-                        <span>LinkedIn</span>
+                <div class="flex justify-center space-x-8 mt-8 border-t border-gray-800 pt-8 relative z-10">
+                    <a href="#" target="_blank" class="text-gray-500 hover:text-blue-400 transition-colors font-semibold tracking-wider uppercase text-sm">
+                        LinkedIn
                     </a>
-                    <a href="#" target="_blank" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
-                        <span>GitHub</span>
+                    <a href="#" target="_blank" class="text-gray-500 hover:text-blue-400 transition-colors font-semibold tracking-wider uppercase text-sm">
+                        GitHub
                     </a>
                 </div>
             </div>
@@ -254,49 +305,72 @@
 
     </main>
 
-    <footer class="text-center py-8 text-gray-600 text-sm mt-12 border-t border-gray-900">
-        &copy; 2026 Uygar Tatar. All rights reserved.
+    <footer class="text-center py-8 text-gray-700 text-sm mt-12 border-t border-gray-900/50">
+        &copy; 2026 Uygar Tatar. Built with code and data.
     </footer>
 
     <!-- Tab Logic Script -->
     <script>
         function switchTab(tabId) {
-            // Tüm içerikleri gizle
+            // Animasyonu sıfırlamak için display none yapmadan önce class'ı sil
             document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.remove('fade-in');
                 el.classList.add('hidden');
             });
-            // Seçilen içeriği göster
-            document.getElementById(tabId).classList.remove('hidden');
+            
+            // Seçilen içeriği göster ve biraz gecikmeyle animasyon class'ını ekle (tarayıcı render etsin diye)
+            const selectedTab = document.getElementById(tabId);
+            selectedTab.classList.remove('hidden');
+            
+            // Küçük bir timeout, animasyonun her tıklamada baştan tetiklenmesini sağlar
+            setTimeout(() => {
+                selectedTab.classList.add('fade-in');
+            }, 10);
 
-            // Eğer portfolio sekmesine dönülüyorsa, grid'i göster detayları gizle
+            // Eğer portfolio sekmesine dönülüyorsa, detayları gizle grid'i göster
             if(tabId === 'portfolio') {
-                backToGrid();
+                backToGrid(false); // false: yukarı kaydırma yapma
             }
 
-            // Navigasyon aktif stilini güncelle
+            // Menü alt çizgisi ve renk aktifliği
             document.querySelectorAll('.nav-link').forEach(el => {
                 el.classList.remove('active', 'text-blue-400');
             });
             document.getElementById('nav-' + tabId).classList.add('active', 'text-blue-400');
             
-            // Sayfanın en üstüne kaydır
-            window.scrollTo(0, 0);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function showProjectDetail(projectId) {
             document.getElementById('portfolio-grid').classList.add('hidden');
             document.querySelectorAll('.project-detail').forEach(el => {
                 el.classList.add('hidden');
+                el.classList.remove('fade-in');
             });
-            document.getElementById(projectId).classList.remove('hidden');
-            window.scrollTo(0, 0);
+            
+            const proj = document.getElementById(projectId);
+            proj.classList.remove('hidden');
+            
+            setTimeout(() => {
+                proj.classList.add('fade-in');
+            }, 10);
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function backToGrid() {
+        function backToGrid(scroll = true) {
             document.querySelectorAll('.project-detail').forEach(el => {
                 el.classList.add('hidden');
             });
-            document.getElementById('portfolio-grid').classList.remove('hidden');
+            
+            const grid = document.getElementById('portfolio-grid');
+            grid.classList.remove('hidden');
+            
+            setTimeout(() => {
+                grid.classList.add('fade-in');
+            }, 10);
+            
+            if(scroll) window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
