@@ -123,23 +123,16 @@
                 <h2 class="text-3xl font-bold mb-8 text-center">Press Factory Tycoon</h2>
                 
                 <!-- VİDEO EKLEME YERİ -->
-                <div class="w-full bg-gray-800 rounded-xl overflow-hidden mb-8 border border-gray-700 aspect-video relative shadow-2xl">
-                    
-                    <!-- Kendi MP4 videonu eklemek için aşağıdaki satırları kullan -->
-                    <!--
-                    <video autoplay loop muted playsinline class="w-full h-full object-cover">
-                        <source src="oyun-videosu.mp4" type="video/mp4">
-                    </video>
-                    -->
-                    
-                    <!-- Video eklenene kadar duracak Placeholder -->
-                    <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-500">
-                        <div class="w-16 h-16 bg-blue-600/20 text-blue-500 rounded-full flex items-center justify-center mx-auto mb-4 border border-blue-500/30">
-                            <span class="text-2xl ml-1">▶</span>
-                        </div>
-                        <p class="font-mono text-sm">Gameplay Video (MP4) goes here</p>
-                    </div>
-                </div>
+                <div class="w-full bg-gray-800 rounded-xl overflow-hidden mb-8 border border-gray-700 aspect-video relative shadow-2xl">
+                    <iframe 
+                        class="absolute inset-0 w-full h-full" 
+                        src="https://www.youtube.com/embed/t_x13aG_Zlk?autoplay=1&mute=1&loop=1&playlist=t_x13aG_Zlk" 
+                        title="Press Factory Tycoon Gameplay" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
 
                 <div class="text-center mb-10">
                     <a href="#" class="text-blue-400 hover:text-blue-300 hover:underline transition-colors font-semibold">Download / Play (Coming Soon)</a>
