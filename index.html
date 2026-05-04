@@ -150,12 +150,17 @@
                 </p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-                    <!-- Spawner -->
+                    <!-- Spawner & Pooling GIF -->
                     <div class="bg-gray-900 rounded-xl border border-gray-700 shadow-xl overflow-hidden flex flex-col">
+                        <!-- Statik Inspector SS -->
                         <img src="Spawner.png" alt="Item Spawner Component" class="w-full object-contain border-b border-gray-800">
+                        <!-- Hareketli Pooling GIF -->
+                        <div class="bg-black flex justify-center items-center h-48 border-b border-gray-800 py-2 shadow-inner">
+                            <img src="pooling.gif" alt="Object Pooling Hierarchy" class="h-full object-contain">
+                        </div>
                         <div class="p-5">
-                            <strong class="text-gray-200 block mb-2">Optimized Item Spawning & Traffic Control</strong>
-                            <p class="text-sm text-gray-400 text-justify">As seen in the <code>ItemSpawner</code> configuration, I built a custom pooling system right into the core mechanic. By setting an Initial Pool Size, the system completely eliminates <code>Instantiate</code> and <code>Destroy</code> calls during active gameplay, effectively preventing Garbage Collection (GC) spikes. Furthermore, the Traffic Control settings use lightweight physics overlap checks to ensure items do not spawn on top of each other, maintaining a smooth, realistic conveyor flow without heavy Rigidbody calculations.</p>
+                            <strong class="text-gray-200 block mb-2">Optimized Item Spawning, Pooling & Traffic Control</strong>
+                            <p class="text-sm text-gray-400 text-justify">As seen in the <code>ItemSpawner</code> configuration and dynamic Hierarchy setup, I built a custom pooling system right into the core mechanic. By setting an Initial Pool Size, the system completely eliminates <code>Instantiate</code> and <code>Destroy</code> calls during active gameplay. Objects are seamlessly recycled (enabled/disabled) as shown in the GIF, effectively preventing Garbage Collection (GC) spikes. Furthermore, the Traffic Control settings use lightweight physics overlap checks to ensure items do not spawn on top of each other, maintaining a smooth, realistic conveyor flow without heavy Rigidbody calculations.</p>
                         </div>
                     </div>
                     <!-- Delivery Truck -->
