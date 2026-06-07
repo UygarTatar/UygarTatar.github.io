@@ -1,59 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uygar Tatar | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #1a1a1a; color: #e5e5e5; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        
+        body {
+            background-color: #1a1a1a;
+            color: #e5e5e5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
         /* Geometrik Banner Arka Planı */
         .hero-banner {
             background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 50%, #064e3b 100%);
             background-size: cover;
             position: relative;
         }
+
         .hero-banner::after {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
             opacity: 0.1;
         }
-        
+
         /* Menü Animasyonları */
-        .nav-link { 
-            cursor: pointer; 
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-            font-size: 0.85rem; 
-            font-weight: 600; 
-            transition: all 0.3s ease; 
+        .nav-link {
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
             position: relative;
             padding-bottom: 4px;
         }
-        .nav-link:hover, .nav-link.active { color: #60a5fa; }
-        .nav-link::after {
-            content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 50%;
-            background-color: #60a5fa; transition: all 0.3s ease; transform: translateX(-50%);
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #60a5fa;
         }
-        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: #60a5fa;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
 
         /* Sayfa Geçiş Animasyonu */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         .fade-in {
             animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
 
         /* Kart Animasyonları */
-        .project-card { transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
-        .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+        .project-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
     </style>
 </head>
+
 <body class="antialiased">
 
     <!-- Sticky Navigation (Ortalanmış) -->
@@ -82,82 +123,116 @@
 
         <!-- ==================== PORTFOLIO TAB ==================== -->
         <section id="portfolio" class="tab-content fade-in">
-            
+
             <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Project 1: Press Factory Tycoon -->
-                <div class="project-card bg-gray-800 rounded-lg overflow-hidden group" onclick="showProjectDetail('proj-press')">
+                <div class="project-card bg-gray-800 rounded-lg overflow-hidden group"
+                    onclick="showProjectDetail('proj-press')">
                     <div class="h-48 relative flex items-center justify-center bg-gray-900 overflow-hidden">
                         <!-- RESİM EKLEME YERİ 1 -->
-                        <img src="PressFactoryIcon 2.png" alt="Press Factory" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity">
+                        <img src="PressFactoryIcon 2.png" alt="Press Factory"
+                            class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity">
                         <div class="absolute inset-0 bg-blue-900/60 mix-blend-multiply"></div>
-                        <h3 class="text-2xl font-bold text-white relative z-10 text-center px-4">PRESS FACTORY TYCOON</h3>
+                        <h3 class="text-2xl font-bold text-white relative z-10 text-center px-4">PRESS FACTORY TYCOON
+                        </h3>
                     </div>
                 </div>
 
                 <!-- Project 2: Movie Recommender -->
-                <div class="project-card bg-gray-800 rounded-lg overflow-hidden group" onclick="showProjectDetail('proj-movie')">
+                <div class="project-card bg-gray-800 rounded-lg overflow-hidden group"
+                    onclick="showProjectDetail('proj-movie')">
                     <div class="h-48 relative flex items-center justify-center bg-gray-900 overflow-hidden">
-                         <!-- RESİM EKLEME YERİ 2 -->
-                        <!-- <img src="movie-cover.jpg" alt="Movie Recommender" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity"> -->
+                        <!-- RESİM EKLEME YERİ 2 -->
+                        <img src="matchcut_logo.jpeg" alt="MatchCut Movie App"
+                            class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity">
                         <div class="absolute inset-0 bg-purple-900/60 mix-blend-multiply"></div>
-                        <h3 class="text-2xl font-bold text-white relative z-10 text-center px-4">MOVIE RECOMMENDER</h3>
+                        <h3 class="text-2xl font-bold text-white relative z-10 text-center px-4">MATCHCUT MOVIE APP</h3>
                     </div>
                 </div>
 
                 <!-- Project 3: AWS -->
-                <div class="project-card bg-gray-800 rounded-lg overflow-hidden group" onclick="showProjectDetail('proj-aws')">
+                <div class="project-card bg-gray-800 rounded-lg overflow-hidden group"
+                    onclick="showProjectDetail('proj-aws')">
                     <div class="h-48 relative flex items-center justify-center bg-gray-900 overflow-hidden">
-                         <!-- RESİM EKLEME YERİ 3 -->
-                        <!-- <img src="aws-cover.jpg" alt="AWS Infra" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity"> -->
+                        <img src="aws_logo.png" alt="AWS Cloud Infra"
+                            class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity">
                         <div class="absolute inset-0 bg-orange-900/60 mix-blend-multiply"></div>
                         <h3 class="text-2xl font-bold text-white relative z-10 text-center px-4">AWS CLOUD INFRA</h3>
                     </div>
                 </div>
+
+                <!-- Project 4: ONYX -->
+                <div class="project-card bg-gray-800 rounded-lg overflow-hidden group"
+                    onclick="showProjectDetail('proj-onyx')">
+                    <div class="h-48 relative flex items-center justify-center bg-gray-900 overflow-hidden">
+                        <img src="onyx-cover.png" alt="ONYX"
+                            class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity">
+                        <div class="absolute inset-0 bg-cyan-900/60 mix-blend-multiply"></div>
+                        <!-- Subtle grid pattern to evoke data/AI feel -->
+                        <div class="absolute inset-0 opacity-10"
+                            style="background-image: repeating-linear-gradient(0deg, #00FFD5 0px, transparent 1px, transparent 20px), repeating-linear-gradient(90deg, #00FFD5 0px, transparent 1px, transparent 20px);">
+                        </div>
+                        <h3 class="text-2xl font-bold text-white relative z-10 text-center px-4">ONYX MARKET
+                            INTELLIGENCE</h3>
+                    </div>
+                </div>
+
             </div>
 
             <!-- Detail View: Press Factory Tycoon -->
             <div id="proj-press" class="project-detail hidden">
-                <button onclick="backToGrid()" class="text-blue-400 hover:text-blue-300 mb-8 flex items-center gap-2 transition-colors">
+                <button onclick="backToGrid()"
+                    class="text-blue-400 hover:text-blue-300 mb-8 flex items-center gap-2 transition-colors">
                     ← Back to Portfolio
                 </button>
                 <h2 class="text-3xl font-bold mb-8 text-center">Press Factory Tycoon</h2>
-                
+
                 <!-- YOUTUBE VIDEO -->
-                <div class="w-full bg-gray-800 rounded-xl overflow-hidden mb-8 border border-gray-700 aspect-video relative shadow-2xl">
-                    <iframe 
-                        class="absolute inset-0 w-full h-full" 
-                        src="https://www.youtube.com/embed/t_x13aG_Zlk?autoplay=1&mute=1&loop=1&playlist=t_x13aG_Zlk" 
-                        title="Press Factory Tycoon Gameplay" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                <div
+                    class="w-full bg-gray-800 rounded-xl overflow-hidden mb-8 border border-gray-700 aspect-video relative shadow-2xl">
+                    <iframe class="absolute inset-0 w-full h-full"
+                        src="https://www.youtube.com/embed/t_x13aG_Zlk?autoplay=1&mute=1&loop=1&playlist=t_x13aG_Zlk"
+                        title="Press Factory Tycoon Gameplay" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen>
                     </iframe>
                 </div>
-                <p class="text-xs text-gray-500 mt-2 text-center mb-10">🔊 Unmute the video to hear in-game audio and sound effects.</p>
+                <p class="text-xs text-gray-500 mt-2 text-center mb-10">🔊 Unmute the video to hear in-game audio and
+                    sound effects.</p>
 
                 <!-- PROJECT OVERVIEW -->
-                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">Project Overview & Engineering Architecture</h3>
+                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">Project Overview &
+                    Engineering Architecture</h3>
                 <p class="text-gray-400 mb-8 leading-relaxed text-justify">
-                    Press Factory Tycoon is a hybrid-casual factory simulation game built entirely in Unity (C#). The core gameplay loop is centered around a satisfying and readable progression system: players spawn items onto a conveyor belt, process them through hydraulic presses, and deliver them to generate revenue. Players then use these earnings to upgrade machinery, unlock higher-tier items, and switch between different production eras (e.g., fruit production to mining). 
+                    Press Factory Tycoon is a hybrid-casual factory simulation game built entirely in Unity (C#). The
+                    core gameplay loop is centered around a satisfying and readable progression system: players spawn
+                    items onto a conveyor belt, process them through hydraulic presses, and deliver them to generate
+                    revenue. Players then use these earnings to upgrade machinery, unlock higher-tier items, and switch
+                    between different production eras (e.g., fruit production to mining).
                     <br><br>
-                    Beyond the casual surface, my primary objective with this project was to engineer a robust, scalable, and maintainable software architecture that solves common performance and iteration bottlenecks found in mobile game development.
+                    Beyond the casual surface, my primary objective with this project was to engineer a robust,
+                    scalable, and maintainable software architecture that solves common performance and iteration
+                    bottlenecks found in mobile game development.
                 </p>
 
                 <!-- 1. CORE SYSTEMS & COMPONENT-BASED DESIGN -->
-                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">1. Core Systems & Component-Based Design</h3>
+                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">1. Core Systems &
+                    Component-Based Design</h3>
                 <p class="text-gray-400 mb-6 leading-relaxed text-justify">
-                    In hyper-casual and hybrid-casual development, runtime performance and physics calculations must be tightly controlled. I designed the core gameplay entities to be self-contained and highly optimized.
+                    In hyper-casual and hybrid-casual development, runtime performance and physics calculations must be
+                    tightly controlled. I designed the core gameplay entities to be self-contained and highly optimized.
                 </p>
-                
+
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
                     <!-- Spawner & Pooling GIF -->
                     <div class="bg-gray-900 rounded-xl border border-gray-700 shadow-xl overflow-hidden flex flex-col">
-                        
+
                         <!-- YAN YANA GÖRSEL DÜZENİ -->
                         <div class="flex flex-row border-b border-gray-800 bg-[#2b2b2b]">
                             <!-- Sol Taraf: Spawner SS (%60 Genişlik) -->
                             <div class="w-3/5 p-2 flex items-center justify-center">
-                                <img src="Spawner.png" alt="Item Spawner Component" class="w-full object-contain rounded shadow-lg border border-gray-700">
+                                <img src="Spawner.png" alt="Item Spawner Component"
+                                    class="w-full object-contain rounded shadow-lg border border-gray-700">
                             </div>
                             <!-- Sağ Taraf: Pooling GIF (%40 Genişlik) -->
                             <div class="w-2/5 flex items-center justify-center bg-black border-l border-gray-800">
@@ -166,99 +241,998 @@
                         </div>
 
                         <div class="p-5">
-                            <strong class="text-gray-200 block mb-2">Optimized Item Spawning, Pooling & Traffic Control</strong>
-                            <p class="text-sm text-gray-400 text-justify">As seen in the <code>ItemSpawner</code> configuration and dynamic Hierarchy setup, I built a custom pooling system right into the core mechanic. By setting an Initial Pool Size, the system completely eliminates <code>Instantiate</code> and <code>Destroy</code> calls during active gameplay. Objects are seamlessly recycled (enabled/disabled) as shown in the GIF, effectively preventing Garbage Collection (GC) spikes. Furthermore, the Traffic Control settings use lightweight physics overlap checks to ensure items do not spawn on top of each other, maintaining a smooth, realistic conveyor flow without heavy Rigidbody calculations.</p>
+                            <strong class="text-gray-200 block mb-2">Optimized Item Spawning, Pooling & Traffic
+                                Control</strong>
+                            <p class="text-sm text-gray-400 text-justify">As seen in the <code>ItemSpawner</code>
+                                configuration and dynamic Hierarchy setup, I built a custom pooling system right into
+                                the core mechanic. By setting an Initial Pool Size, the system completely eliminates
+                                <code>Instantiate</code> and <code>Destroy</code> calls during active gameplay. Objects
+                                are seamlessly recycled (enabled/disabled) as shown in the GIF, effectively preventing
+                                Garbage Collection (GC) spikes. Furthermore, the Traffic Control settings use
+                                lightweight physics overlap checks to ensure items do not spawn on top of each other,
+                                maintaining a smooth, realistic conveyor flow without heavy Rigidbody calculations.
+                            </p>
                         </div>
                     </div>
-                    
+
                     <!-- Delivery Truck -->
                     <div class="bg-gray-900 rounded-xl border border-gray-700 shadow-xl overflow-hidden flex flex-col">
-                        <img src="Delivery Truck.png" alt="Collector Component" class="w-full object-contain border-b border-gray-800">
+                        <img src="Delivery Truck.png" alt="Collector Component"
+                            class="w-full object-contain border-b border-gray-800">
                         <div class="p-5">
                             <strong class="text-gray-200 block mb-2">Encapsulated Collector Logic</strong>
-                            <p class="text-sm text-gray-400 text-justify">The Delivery Truck acts as the primary economic converter in the game. I engineered this component to encapsulate its own capacity logic, UI bindings, and state-driven animations. By keeping the audio and visual effect variables exposed in the Inspector, the game maintains a clean separation of concerns: the truck handles its own local feedback loop without bloating a central Game Manager.</p>
+                            <p class="text-sm text-gray-400 text-justify">The Delivery Truck acts as the primary
+                                economic converter in the game. I engineered this component to encapsulate its own
+                                capacity logic, UI bindings, and state-driven animations. By keeping the audio and
+                                visual effect variables exposed in the Inspector, the game maintains a clean separation
+                                of concerns: the truck handles its own local feedback loop without bloating a central
+                                Game Manager.</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- 2. DATA-DRIVEN ECONOMY -->
-                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">2. Data-Driven Economy & Progression</h3>
+                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">2. Data-Driven Economy &
+                    Progression</h3>
                 <p class="text-gray-400 mb-6 leading-relaxed text-justify">
-                    To ensure the game is scalable and "designer-friendly", I moved away from hardcoded values and embraced a fully data-driven architecture using <code>ScriptableObjects</code>.
+                    To ensure the game is scalable and "designer-friendly", I moved away from hardcoded values and
+                    embraced a fully data-driven architecture using <code>ScriptableObjects</code>.
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
                     <!-- Item Data -->
                     <div class="bg-gray-900 rounded-xl border border-gray-700 shadow-xl overflow-hidden flex flex-col">
-                        <img src="Item Data.png" alt="Scriptable Object Item Data" class="w-full object-contain border-b border-gray-800">
+                        <img src="Item Data.png" alt="Scriptable Object Item Data"
+                            class="w-full object-contain border-b border-gray-800">
                         <div class="p-5">
                             <strong class="text-gray-200 block mb-2">Dynamic Economy & Upgrade Balancing</strong>
-                            <p class="text-sm text-gray-400 text-justify">Every item in the game has its own data profile. This architecture allows Game Designers to independently balance the economy directly from the Inspector. Key variables such as Base Price, Base Chance, and crucial progression math are fully exposed. The UI upgrade slots dynamically read this data to generate upgrade lists at runtime, meaning new item tiers can be added without writing a single line of UI code.</p>
+                            <p class="text-sm text-gray-400 text-justify">Every item in the game has its own data
+                                profile. This architecture allows Game Designers to independently balance the economy
+                                directly from the Inspector. Key variables such as Base Price, Base Chance, and crucial
+                                progression math are fully exposed. The UI upgrade slots dynamically read this data to
+                                generate upgrade lists at runtime, meaning new item tiers can be added without writing a
+                                single line of UI code.</p>
                         </div>
                     </div>
                     <!-- Progression Manager -->
                     <div class="bg-gray-900 rounded-xl border border-gray-700 shadow-xl overflow-hidden flex flex-col">
-                        <img src="Item Data 2.png" alt="Progression Manager Database" class="w-full object-contain border-b border-gray-800">
+                        <img src="Item Data 2.png" alt="Progression Manager Database"
+                            class="w-full object-contain border-b border-gray-800">
                         <div class="p-5">
                             <strong class="text-gray-200 block mb-2">Centralized Progression Management</strong>
-                            <p class="text-sm text-gray-400 text-justify">The <code>ProgressionManager</code> acts as the brain for the game's broader state. It handles the dynamic switching between entirely different environments (Fruit Era vs. Ore Era) and holds the master master database of all game items. As shown, the system effortlessly scales and manages global unlock costs, ensuring the transition between mid-game and late-game content is smooth and mathematically sound.</p>
+                            <p class="text-sm text-gray-400 text-justify">The <code>ProgressionManager</code> acts as
+                                the brain for the game's broader state. It handles the dynamic switching between
+                                entirely different environments (Fruit Era vs. Ore Era) and holds the master master
+                                database of all game items. As shown, the system effortlessly scales and manages global
+                                unlock costs, ensuring the transition between mid-game and late-game content is smooth
+                                and mathematically sound.</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- 3. SCALABLE ARCHITECTURE -->
-                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">3. Scalable Architecture & Safe Bootstrapping</h3>
+                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">3. Scalable Architecture
+                    & Safe Bootstrapping</h3>
                 <ul class="list-disc pl-5 space-y-3 text-gray-400 leading-relaxed mb-10 text-justify">
-                    <li><strong class="text-gray-200">Lightweight Dependency Injection (DI):</strong> To ensure the codebase remains maintainable, I replaced rigid Singleton patterns with a custom <code>ServiceContainer</code> and <code>GameInstaller</code>. By introducing abstractions like <code>IMoneyService</code> and <code>IProgressionService</code>, I achieved significantly lower runtime coupling.</li>
-                    <li><strong class="text-gray-200">Inspector-First Bootstrapping:</strong> To guarantee a crash-free initialization, I centralized the startup wiring. Custom editor tooling within the <code>GameInstaller</code> features "Auto Wire From Scene" functionality and missing-reference validation checks, minimizing configuration mistakes for the entire team.</li>
-                    <li><strong class="text-gray-200">State Persistence:</strong> A robust <code>SaveManager</code> utilizing <code>PlayerPrefs</code> meticulously tracks and restores complex game states—including money balances, era shifts, and specific machine upgrade levels—ensuring consistent player experience across sessions.</li>
+                    <li><strong class="text-gray-200">Lightweight Dependency Injection (DI):</strong> To ensure the
+                        codebase remains maintainable, I replaced rigid Singleton patterns with a custom
+                        <code>ServiceContainer</code> and <code>GameInstaller</code>. By introducing abstractions like
+                        <code>IMoneyService</code> and <code>IProgressionService</code>, I achieved significantly lower
+                        runtime coupling.
+                    </li>
+                    <li><strong class="text-gray-200">Inspector-First Bootstrapping:</strong> To guarantee a crash-free
+                        initialization, I centralized the startup wiring. Custom editor tooling within the
+                        <code>GameInstaller</code> features "Auto Wire From Scene" functionality and missing-reference
+                        validation checks, minimizing configuration mistakes for the entire team.
+                    </li>
+                    <li><strong class="text-gray-200">State Persistence:</strong> A robust <code>SaveManager</code>
+                        utilizing <code>PlayerPrefs</code> meticulously tracks and restores complex game
+                        states—including money balances, era shifts, and specific machine upgrade levels—ensuring
+                        consistent player experience across sessions.</li>
                 </ul>
 
                 <!-- 4. RETENTION & GAME FEEL -->
-                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">4. Retention Mechanics & Game Feel</h3>
-                
+                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">4. Retention Mechanics &
+                    Game Feel</h3>
+
                 <!-- Offline Progress -->
-                <div class="bg-gray-900 rounded-xl border border-gray-700 shadow-xl overflow-hidden flex flex-col md:flex-row items-center gap-6 p-6 mb-6">
-                    <img src="offline.png" alt="Offline Progress Manager" class="w-full md:w-1/3 object-contain rounded border border-gray-800">
+                <div
+                    class="bg-gray-900 rounded-xl border border-gray-700 shadow-xl overflow-hidden flex flex-col md:flex-row items-center gap-6 p-6 mb-6">
+                    <img src="offline.png" alt="Offline Progress Manager"
+                        class="w-full md:w-1/3 object-contain rounded border border-gray-800">
                     <div class="w-full md:w-2/3">
                         <strong class="text-gray-200 block mb-2">Offline Progress (LTV Optimization)</strong>
-                        <p class="text-sm text-gray-400 text-justify">A critical feature for player retention in hybrid-casual games is the offline earning mechanic. I implemented an <code>OfflineProgressManager</code> that accurately calculates accumulated revenue while the game is closed. By exposing settings like Max Offline Hours and Offline Efficiency directly in the Inspector, the game's economy can be easily tweaked for A/B testing to find the perfect balance between rewarding the player and encouraging active sessions.</p>
+                        <p class="text-sm text-gray-400 text-justify">A critical feature for player retention in
+                            hybrid-casual games is the offline earning mechanic. I implemented an
+                            <code>OfflineProgressManager</code> that accurately calculates accumulated revenue while the
+                            game is closed. By exposing settings like Max Offline Hours and Offline Efficiency directly
+                            in the Inspector, the game's economy can be easily tweaked for A/B testing to find the
+                            perfect balance between rewarding the player and encouraging active sessions.
+                        </p>
                     </div>
                 </div>
 
                 <!-- Game Feel -->
                 <div class="bg-gray-900 rounded-xl border border-gray-700 shadow-xl p-6 mb-10">
                     <strong class="text-gray-200 block mb-2">Game Feel (Juice) & UX</strong>
-                    <p class="text-sm text-gray-400 text-justify">I utilized reusable <strong>DOTween-based</strong> animations to enhance the tactile feedback. This includes animated open/close transitions for world-space UI workflows, real-time "current -> next" stat visualizations on upgrade panels, and the satisfying, synchronized downward crush animation of the press machine interacting with spawned items.</p>
+                    <p class="text-sm text-gray-400 text-justify">I utilized reusable <strong>DOTween-based</strong>
+                        animations to enhance the tactile feedback. This includes animated open/close transitions for
+                        world-space UI workflows, real-time "current -> next" stat visualizations on upgrade panels, and
+                        the satisfying, synchronized downward crush animation of the press machine interacting with
+                        spawned items.</p>
                 </div>
 
-            </div> <!-- PROJ-PRESS BURADA KAPANIYOR -->
+            </div>
 
-            <!-- KAZARA SİLİNEN MOVIE RECOMMENDER BURADA -->
             <!-- Detail View: Movie Recommender -->
             <div id="proj-movie" class="project-detail hidden">
-                <button onclick="backToGrid()" class="text-blue-400 hover:text-blue-300 mb-8 flex items-center gap-2">← Back to Portfolio</button>
-                <h2 class="text-3xl font-bold mb-8 text-center">Social Movie Recommendation Project</h2>
-                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2">Overview</h3>
-                <p class="text-gray-400">Will add sometime.</p>
+                <button onclick="backToGrid()"
+                    class="text-blue-400 hover:text-blue-300 mb-8 flex items-center gap-2 transition-colors">
+                    ← Back to Portfolio
+                </button>
+                <h2 class="text-3xl font-bold mb-2 text-center">MatchCut — Social Movie Recommendation Platform</h2>
+                <p class="text-center text-purple-400 text-sm mb-8 tracking-widest uppercase">FastAPI · Python · NestJS
+                    · PostgreSQL · React · SVD · Docker</p>
+
+                <!-- APP SCREENSHOT -->
+                <div class="bg-gray-900 rounded-xl border border-gray-700 shadow-xl overflow-hidden mb-8">
+                    <img src="screenshot_movie.png" alt="MatchCut Movie Recommendation System Screenshot"
+                        class="w-full object-contain">
+                    <p class="text-xs text-gray-500 text-center py-3 px-4">🎬 MatchCut web application — interactive recommendation dashboard displaying collaborative filtering predictions and content-based metadata metrics.</p>
+                </div>
+
+                <!-- LINKS BAR -->
+                <div class="flex justify-center gap-6 mb-10">
+                    <a href="https://matchcutapp.com" target="_blank"
+                        class="bg-purple-900/40 hover:bg-purple-800/60 border border-purple-700 text-purple-300 text-sm font-semibold py-2 px-5 rounded-full transition-all hover:scale-105 shadow">
+                        Live App → matchcutapp.com
+                    </a>
+                </div>
+
+                <!-- PROJECT OVERVIEW -->
+                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">Project Overview</h3>
+                <p class="text-gray-400 mb-8 leading-relaxed text-justify">
+                    MatchCut is a full-stack social movie platform where users can discover films, write reviews,
+                    maintain watchlists, follow other users, and receive personalized recommendations. The project is a
+                    team effort built as a capstone, consisting of three independently-deployed services: a <strong
+                        class="text-gray-200">NestJS REST API</strong>, a <strong class="text-gray-200">React
+                        SPA</strong>, and a <strong class="text-gray-200">Python/FastAPI AI Engine</strong> — all
+                    orchestrated with Docker Compose and deployed to production.
+                    <br><br>
+                    My ownership was focused on two high-complexity areas: the <strong class="text-gray-200">entire AI
+                        recommendation engine</strong> and the backend's <strong class="text-gray-200">recommendations +
+                        onboarding modules</strong> — the core intelligence layer of the product.
+                </p>
+
+                <!-- MY CONTRIBUTIONS -->
+                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">My Contributions</h3>
+
+                <!-- 1. AI ENGINE -->
+                <h4 class="text-lg font-semibold text-purple-400 mb-3 mt-6">1. AI Engine — Full Ownership (Python /
+                    FastAPI)</h4>
+                <p class="text-gray-400 mb-6 leading-relaxed text-justify">
+                    I designed and built the entire AI microservice from scratch. It exposes a FastAPI application with
+                    multiple recommendation strategies, each serving a different user state, and a model training
+                    pipeline that merges production user data with the MovieLens 25M dataset.
+                </p>
+
+                <div class="bg-gray-900 rounded-xl border border-gray-700 shadow-xl p-6 mb-6 font-mono text-sm">
+                    <div class="text-purple-400 text-center mb-4 font-bold tracking-wider">RECOMMENDATION PIPELINE</div>
+                    <pre class="text-gray-400 text-xs leading-loose overflow-x-auto">
+User Request  →  NestJS RecommendationsService
+                        ↓
+          ┌─────────────────────────────┐
+          │   Profile Assembly          │
+          │  reviews + onboarding swipes│
+          └────────────┬────────────────┘
+                       ↓
+          ┌────────────────────────────────────────┐
+          │           AI Engine (FastAPI)           │
+          │                                        │
+          │  POST /api/recommend/dynamic           │
+          │   → Rating-based item-item similarity  │
+          │   → Cosine-weighted candidate scoring  │
+          │                                        │
+          │  POST /api/recommend/content           │
+          │   → Content-based similarity matrix    │
+          │   → Genre/metadata overlap scoring     │
+          │                                        │
+          │  POST /api/recommend/cold-start        │
+          │   → Onboarding liked/disliked profiling│
+          └─────────────┬──────────────────────────┘
+                        ↓
+          weightedMergeWithAttribution()
+          (dynamic × w_d) + (content × w_c)
+                        ↓
+                  Final ranked list</pre>
+                </div>
+
+                <!-- Strategy cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                    <div class="bg-gray-900 rounded-xl border border-gray-700 p-5">
+                        <strong class="text-purple-300 block mb-2">Dynamic (Item-Item CF)</strong>
+                        <p class="text-sm text-gray-400 text-justify">Normalizes rating bias via <strong>user
+                                mean-centering</strong> (<code>rating - user_mean</code>) to highlight relative
+                            likeness.
+                            Utilizes a memory-efficient SciPy <strong>CSR (Compressed Sparse Row) matrix</strong> to
+                            compute pairwise cosine similarities on the transpose directly, preventing RAM out-of-memory
+                            errors on millions of ratings.</p>
+                    </div>
+                    <div class="bg-gray-900 rounded-xl border border-gray-700 p-5">
+                        <strong class="text-purple-300 block mb-2">Content-Based Similarity</strong>
+                        <p class="text-sm text-gray-400 text-justify">Processes a 9,524 × 9,524 matrix. Extracted
+                            discrete text fields via TF-IDF Vectorization, applying unique collection padding
+                            (<code>no_collection_{tmdb_id}</code>). Overview summaries are embedded using
+                            <strong>SentenceTransformers (all-MiniLM-L6-v2)</strong> on GPU with L2 normalization
+                            (enabling fast dot-product similarity). Weights: <strong>Directors (28%)</strong>,
+                            <strong>Keywords (17%)</strong>, <strong>Collection (14%)</strong>, <strong>Genres
+                                (14%)</strong>, <strong>Cast (11%)</strong>, <strong>Overview (9%)</strong>, companies
+                            (4%), language (2%), country (1%).
+                        </p>
+                    </div>
+                    <div class="bg-gray-900 rounded-xl border border-gray-700 p-5">
+                        <strong class="text-purple-300 block mb-2">Cold-Start Discovery</strong>
+                        <p class="text-sm text-gray-400 text-justify">For new users with no ratings, uses onboarding
+                            swipe events (like=4.5 synthetic rating, skip=2.0). Aggregates similarity row vectors for
+                            all liked films into a profile vector and ranks all unseen films by that score. Falls back
+                            to genre-based DB query if AI returns nothing.</p>
+                    </div>
+                </div>
+
+                <!-- Hybrid merge -->
+                <div class="bg-gray-900 rounded-xl border border-gray-700 shadow-xl p-6 mb-10">
+                    <strong class="text-gray-200 block mb-3">Hybrid Merge & Adaptive Weights</strong>
+                    <p class="text-sm text-gray-400 text-justify mb-4">
+                        The backend merges dynamic and content results using a heuristic weight schedule that adapts to
+                        how many ratings a user has. Both result lists are normalized to [0,1] before merging to prevent
+                        scale bias, then combined as:
+                        <code>score = (dynamic / dynamicMax) × w_d + (content / contentMax) × w_c</code>.
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-5 gap-2 text-xs text-center">
+                        <div class="bg-gray-800 rounded-lg p-3 border border-gray-700">
+                            <div class="text-purple-400 font-bold mb-1">&lt; 5 ratings</div>
+                            <div class="text-gray-500">Dynamic 15%<br />Content 85%</div>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg p-3 border border-gray-700">
+                            <div class="text-purple-400 font-bold mb-1">5–10</div>
+                            <div class="text-gray-500">Dynamic 30%<br />Content 70%</div>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg p-3 border border-gray-700">
+                            <div class="text-purple-400 font-bold mb-1">10–20</div>
+                            <div class="text-gray-500">Dynamic 45%<br />Content 55%</div>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg p-3 border border-gray-700">
+                            <div class="text-purple-400 font-bold mb-1">20–50</div>
+                            <div class="text-gray-500">Dynamic 60%<br />Content 40%</div>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg p-3 border border-gray-700">
+                            <div class="text-purple-400 font-bold mb-1">50+</div>
+                            <div class="text-gray-500">Dynamic 75%<br />Content 25%</div>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-4">Cold-start slot weight uses exponential decay: β(n) = 0.75 ×
+                        e<sup>−n/8</sup>, floored at 0.05 — so onboarding data remains a permanent tie-breaker even for
+                        power users.</p>
+                </div>
+
+                <!-- 2. TRAINING & RETRAINING PIPELINE -->
+                <h4 class="text-lg font-semibold text-purple-400 mb-3">2. Model Training & CI/CD Retraining Pipeline
+                </h4>
+                <p class="text-gray-400 mb-6 leading-relaxed text-justify">
+                    I developed a standalone retraining script (<code>standalone_train.py</code>) that builds the SVD
+                    model on the MovieLens 25M base dataset merged with live production ratings exported from
+                    PostgreSQL. To automate this, I configured a <strong>scheduled GitHub Actions CI/CD
+                        workflow</strong> (<code>weekly-retrain.yml</code>) running every Sunday at 03:00 UTC. The
+                    runner connects to the production server via SSH, pulls active database ratings, trains a fresh
+                    model inside a Docker container, uploads the artifact to DigitalOcean Spaces, and restarts the live
+                    container. To resolve user ID overlaps between the datasets, I applied a <strong
+                        class="text-gray-200">10,000,000 user namespace offset</strong> consistently at training and
+                    inference time.
+                </p>
+                <div class="bg-gray-900 rounded-xl border border-gray-700 shadow-xl p-6 mb-6">
+                    <strong class="text-gray-200 block mb-3">Training Steps</strong>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-start gap-3"><span
+                                class="text-purple-400 font-mono font-bold w-6 shrink-0">0.</span>
+                            <p class="text-gray-400"><strong class="text-gray-200">TMDB Data Scraping:</strong> Fetch
+                                metadata for 9,524 movies from the TMDB API with a rate-limit delay of 0.26s. Saves
+                                progress (results and completed IDs) to a local JSON cache every 200 items for
+                                crash-resilient resuming.</p>
+                        </div>
+                        <div class="flex items-start gap-3"><span
+                                class="text-purple-400 font-mono font-bold w-6 shrink-0">1.</span>
+                            <p class="text-gray-400">Load MovieLens 25M base ratings CSV (userId, movieId, rating)</p>
+                        </div>
+                        <div class="flex items-start gap-3"><span
+                                class="text-purple-400 font-mono font-bold w-6 shrink-0">2.</span>
+                            <p class="text-gray-400">Load production DB ratings export (tmdbId → movieId via
+                                <code>link.csv</code> bridge), apply <code>+10M</code> user ID offset
+                            </p>
+                        </div>
+                        <div class="flex items-start gap-3"><span
+                                class="text-purple-400 font-mono font-bold w-6 shrink-0">3.</span>
+                            <p class="text-gray-400"><strong class="text-gray-200">RMSE Health Check:</strong> Runs 5%
+                                test split before full training. If RMSE &gt; 1.30, training aborts and the live model
+                                is preserved. Warns at &gt; 0.95.</p>
+                        </div>
+                        <div class="flex items-start gap-3"><span
+                                class="text-purple-400 font-mono font-bold w-6 shrink-0">4.</span>
+                            <p class="text-gray-400">Run <code>standalone_train.py</code> to train the SVD Matrix
+                                Factorization model (100 latent factors, 20 training epochs) via
+                                <code>scikit-surprise</code> on 100% of merged data.</p>
+                        </div>
+                        <div class="flex items-start gap-3"><span
+                                class="text-purple-400 font-mono font-bold w-6 shrink-0">5.</span>
+                            <p class="text-gray-400">Serialize model to <code>movie_recommender.pkl</code> and upload to
+                                <strong class="text-gray-200">DigitalOcean Spaces</strong> (S3-compatible). The workflow
+                                then triggers an SSH <code>docker restart movie_ai</code> on the production server to
+                                reload the fresh model without downtime.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODEL EVALUATION & CALIBRATION -->
+                <h4 class="text-lg font-semibold text-purple-400 mb-3">Model Evaluation & Calibration (Taste Profiles
+                    Test Suite)</h4>
+                <p class="text-gray-400 mb-6 leading-relaxed text-justify">
+                    To tune recommendations offline, I built an evaluation suite featuring <strong>10 distinct user
+                        taste profiles</strong> (e.g., Nolan Crime, Fincher Thriller, Horror, Animation). The validation
+                    suite utilizes a <strong>must_have / nice_to_have / must_avoid scoring system</strong> to
+                    quantitatively score recommendations:
+                    <code
+                        class="text-xs text-purple-300 bg-gray-950 px-2 py-1 rounded font-mono block my-2 border border-gray-800 w-fit">Profile Score = (2 × must_have_hits) + (1 × nice_to_have_hits) − (2 × must_avoid_hits)</code>
+                    The initial baseline scorer suffered from false recommendations due to weak metadata matches
+                    (yielding a score of <strong>-6</strong> on the Nolan-heavy thriller profile). To resolve this, I
+                    implemented an <strong>Improved Confidence-Weighted Scorer</strong> applying a similarity threshold
+                    filter (<code>min_sim = 0.08</code>) and confidence factor:
+                    <code>confidence = min(total_sim_weight / 0.3, 1.0)</code>. Unconfident matches decay to a neutral
+                    3.0 rating. This refinement successfully eliminated all false-positive recommendations (avoid hits),
+                    raising the validation score from <strong>-6 to +5</strong>.
+                </p>
+
+                <!-- 3. ONBOARDING MODULE -->
+                <h4 class="text-lg font-semibold text-purple-400 mb-3">3. Backend — Onboarding Module (NestJS)</h4>
+                <p class="text-gray-400 mb-6 leading-relaxed text-justify">
+                    I built the onboarding flow that converts first-time user swipe events into a machine-readable
+                    preference profile. New users are shown a curated film selection and swipe left (skip) or right
+                    (like). Each swipe is stored as an <code>OnboardingSwipeEvent</code> with a source tag
+                    distinguishing onboarding swipes from later discovery swipes — critical because the AI cold-start
+                    endpoint only uses the onboarding set.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+                    <div class="bg-gray-900 rounded-xl border border-gray-700 p-5">
+                        <strong class="text-gray-200 block mb-2">Synthetic Rating Mapping</strong>
+                        <p class="text-sm text-gray-400 text-justify">Swipe "like" → rating 4.5, swipe "skip" → rating
+                            2.0. These synthetic ratings are injected into the recommendation profile alongside real
+                            user reviews, merged by <code>movieId</code> with real ratings taking precedence via a
+                            <code>Map</code> deduplication pass.
+                        </p>
+                    </div>
+                    <div class="bg-gray-900 rounded-xl border border-gray-700 p-5">
+                        <strong class="text-gray-200 block mb-2">Cold-Start Profile Construction</strong>
+                        <p class="text-sm text-gray-400 text-justify">Onboarding events are also separated into
+                            liked/disliked TMDB ID lists fed directly to the AI cold-start endpoint. The
+                            <code>seenMovieIds</code> set prevents already-shown films from reappearing in
+                            recommendations. Source tagging allows the cold-start weight to decay independently as real
+                            ratings accumulate.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4. RECOMMENDATIONS MODULE -->
+                <h4 class="text-lg font-semibold text-purple-400 mb-3">4. Backend — Recommendations Module (NestJS)</h4>
+                <p class="text-gray-400 mb-6 leading-relaxed text-justify">
+                    The <code>RecommendationsService</code> is the orchestration layer that coordinates between the
+                    user's rating history, their onboarding profile, and the AI engine. It was the most architecturally
+                    complex piece of the backend I wrote.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+                    <div class="bg-gray-900 rounded-xl border border-gray-700 p-5">
+                        <strong class="text-gray-200 block mb-2">Slot Allocation</strong>
+                        <p class="text-sm text-gray-400 text-justify">The final result list is split into a "cold-start
+                            slot" and a "profile slot". The cold-start slot size is calculated from the exponential
+                            decay weight × requested limit. This ensures that even users with 50+ ratings still see a
+                            small fraction of onboarding-informed recommendations as a diversity anchor.</p>
+                    </div>
+                    <div class="bg-gray-900 rounded-xl border border-gray-700 p-5">
+                        <strong class="text-gray-200 block mb-2">Graceful Fallback Chain</strong>
+                        <p class="text-sm text-gray-400 text-justify">If the AI engine is down (503), the service
+                            catches the error, logs a warning, and falls through to a popularity-ranked DB query
+                            (<code>averageRating DESC, ratingCount DESC</code>). The response <code>meta.source</code>
+                            field accurately reflects which path was taken: <code>dynamic</code>, <code>content</code>,
+                            <code>hybrid</code>, <code>cold-start</code>, or <code>fallback</code>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- TECH STACK -->
+                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">Technology Stack</h3>
+                <div class="bg-gray-900/50 p-6 rounded-xl border border-gray-800 text-sm text-gray-400 space-y-3">
+                    <p><strong class="text-gray-200">AI Engine:</strong> Python 3.10, FastAPI, scikit-surprise (SVD),
+                        NumPy, Pandas — item-item &amp; content-based similarity matrices</p>
+                    <p><strong class="text-gray-200">Model Storage:</strong> DigitalOcean Spaces (S3-compatible), boto3
+                        — artifact upload after training</p>
+                    <p><strong class="text-gray-200">Backend:</strong> NestJS 11, TypeORM, PostgreSQL 15 — onboarding
+                        &amp; recommendations modules</p>
+                    <p><strong class="text-gray-200">Frontend:</strong> React 19, Vite, Tailwind CSS 4 (team
+                        contribution)</p>
+                    <p><strong class="text-gray-200">Infrastructure:</strong> Docker Compose, multi-stage Dockerfiles
+                        (dev + prod), Prometheus + Grafana monitoring</p>
+                    <p><strong class="text-gray-200">Dataset:</strong> MovieLens 25M (~25M ratings, ~62K films) merged
+                        with live production ratings</p>
+                </div>
+
             </div>
 
-            <!-- KAZARA SİLİNEN AWS KISMI BURADA -->
             <!-- Detail View: AWS Infra -->
             <div id="proj-aws" class="project-detail hidden">
-                <button onclick="backToGrid()" class="text-blue-400 hover:text-blue-300 mb-8 flex items-center gap-2">← Back to Portfolio</button>
-                <h2 class="text-3xl font-bold mb-8 text-center">AWS Cloud Infrastructure</h2>
-                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2">Overview</h3>
-                <p class="text-gray-400">Will add sometime.</p>
+                <button onclick="backToGrid()"
+                    class="text-blue-400 hover:text-blue-300 mb-8 flex items-center gap-2 transition-colors">
+                    ← Back to Portfolio
+                </button>
+                <h2 class="text-3xl font-bold mb-2 text-center">AWS High Availability WordPress Infrastructure</h2>
+                <p class="text-center text-orange-400 text-sm mb-8 tracking-widest uppercase">VPC · EC2 · RDS · ALB ·
+                    ASG · LEMP Stack</p>
+
+                <!-- PROJECT OVERVIEW -->
+                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">Project Overview</h3>
+                <p class="text-gray-400 mb-8 leading-relaxed text-justify">
+                    This project involved designing and deploying a fully production-grade, highly available WordPress
+                    application on AWS from scratch. The architecture follows the <strong
+                        class="text-gray-200">Stateless Web Tier</strong> pattern — the database is completely decoupled
+                    from the web servers, meaning any EC2 instance can be terminated and replaced without data loss. The
+                    entire web server configuration, from LEMP stack installation to WordPress setup, is automated via a
+                    User Data bash script that runs on every new instance boot — so the infrastructure heals itself with
+                    zero manual intervention.
+                </p>
+
+                <!-- ARCHITECTURE OVERVIEW -->
+                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">Architecture Overview
+                </h3>
+                <p class="text-gray-400 mb-6 leading-relaxed text-justify">
+                    The infrastructure was built across five sequential phases, each layer depending on the one before
+                    it:
+                </p>
+
+                <div class="bg-gray-900 rounded-xl border border-gray-700 shadow-xl p-6 mb-10 font-mono text-sm">
+                    <div class="text-orange-400 text-center mb-4 font-bold tracking-wider">INFRASTRUCTURE STACK</div>
+                    <pre class="text-gray-400 text-xs leading-loose overflow-x-auto">
+Internet
+    ↓
+Internet Gateway (IGW)
+    ↓
+Application Load Balancer (Wordpress-ALB)
+    ↓  HTTP :80  →  Wordpress-TG (Target Group)
+    ├── EC2 Instance (Private-Subnet-A · us-east-1a)  ← Auto Scaling
+    └── EC2 Instance (Private-Subnet-B · us-east-1b)  ← Auto Scaling
+         │  Both run: LEMP stack via User Data script
+         │  (Nginx + PHP-FPM + WordPress auto-configured)
+         ↓
+    Amazon RDS  (MySQL · t3.micro · 20 GiB)
+    wordpress-db  ·  Single-AZ  ·  RDS-SG</pre>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-6 text-center text-xs">
+                        <div class="bg-gray-800 rounded-lg p-3 border border-gray-700">
+                            <div class="text-orange-400 font-bold mb-1">VPC</div>
+                            <div class="text-gray-500">10.0.0.0/16<br />Custom network isolation</div>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg p-3 border border-gray-700">
+                            <div class="text-orange-400 font-bold mb-1">Security Groups</div>
+                            <div class="text-gray-500">WEB-SG (HTTP+SSH)<br />RDS-SG (MySQL only)</div>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg p-3 border border-gray-700">
+                            <div class="text-orange-400 font-bold mb-1">Load Balancer</div>
+                            <div class="text-gray-500">ALB across 2 AZs<br />Health checks: 200–399</div>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg p-3 border border-gray-700">
+                            <div class="text-orange-400 font-bold mb-1">Auto Scaling</div>
+                            <div class="text-gray-500">Min: 2 / Max: 4<br />ELB health-driven</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PHASE 1 -->
+                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">Phase 1 — Network &
+                    Security</h3>
+                <p class="text-gray-400 mb-6 leading-relaxed text-justify">
+                    The foundation was a custom VPC with two public subnets (for the ALB) and two private subnets (for
+                    the EC2 web servers) spread across different availability zones. An Internet Gateway was attached to
+                    the VPC and associated with the public subnets. EC2 instances were placed in the private subnets to
+                    keep them off the public internet — traffic reaches them only through the ALB.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+                    <div class="bg-gray-900 rounded-xl border border-gray-700 p-5">
+                        <strong class="text-gray-200 block mb-2">WEB-SG (Web Servers)</strong>
+                        <p class="text-sm text-gray-400 text-justify">Inbound: HTTP port 80 from anywhere, SSH port 22.
+                            SSH source was initially set to "My IP" but was changed to "Anywhere IPv4" during debugging
+                            to allow remote access from different networks.</p>
+                    </div>
+                    <div class="bg-gray-900 rounded-xl border border-gray-700 p-5">
+                        <strong class="text-gray-200 block mb-2">RDS-SG (Database)</strong>
+                        <p class="text-sm text-gray-400 text-justify">Inbound: MySQL/Aurora port 3306, source restricted
+                            to WEB-SG only. This ensures the database is never directly accessible from the internet —
+                            only from the EC2 web servers.</p>
+                    </div>
+                </div>
+
+                <!-- PHASE 2 -->
+                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">Phase 2 — Database
+                    (Amazon RDS)</h3>
+                <p class="text-gray-400 mb-6 leading-relaxed text-justify">
+                    A managed MySQL RDS instance was deployed to decouple data persistence from the stateless web tier.
+                    Using a managed RDS rather than a database on EC2 means backups, patching, and failover are handled
+                    by AWS — the web servers remain truly disposable.
+                </p>
+                <div class="bg-gray-900 rounded-xl border border-gray-700 shadow-xl p-6 mb-10">
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+                        <div><span class="text-gray-500 block text-xs mb-1">Engine</span><span
+                                class="text-gray-200">MySQL (Community)</span></div>
+                        <div><span class="text-gray-500 block text-xs mb-1">Instance Class</span><span
+                                class="text-gray-200">t3.micro</span></div>
+                        <div><span class="text-gray-500 block text-xs mb-1">Storage</span><span class="text-gray-200">20
+                                GiB gp2</span></div>
+                        <div><span class="text-gray-500 block text-xs mb-1">Deployment</span><span
+                                class="text-gray-200">Single-AZ</span></div>
+                        <div><span class="text-gray-500 block text-xs mb-1">Initial DB Name</span><span
+                                class="text-gray-200">wordpress</span></div>
+                        <div><span class="text-gray-500 block text-xs mb-1">Security Group</span><span
+                                class="text-gray-200">RDS-SG</span></div>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-4">Note: Single-AZ was chosen intentionally for this project
+                        since high availability was implemented at the web tier via ALB + ASG, not at the database
+                        layer.</p>
+                </div>
+
+                <!-- PHASE 3 -->
+                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">Phase 3 — Application
+                    Load Balancer</h3>
+                <p class="text-gray-400 mb-6 leading-relaxed text-justify">
+                    An Application Load Balancer was configured to distribute incoming HTTP traffic across healthy EC2
+                    instances. A key debugging step here: the health check success codes had to be changed from
+                    <code>200</code> to <code>200–399</code> because WordPress returns <code>302</code> redirects during
+                    setup, which were incorrectly being flagged as unhealthy targets.
+                </p>
+                <div class="bg-gray-900 rounded-xl border border-gray-700 shadow-xl p-5 mb-10">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                        <div>
+                            <strong class="text-gray-200 block mb-1">Wordpress-ALB</strong>
+                            <p class="text-xs text-gray-500">Internet-facing · HTTP:80<br />Mapped to public subnets
+                                (ALB tier)<br />EC2 targets in private subnets · WEB-SG</p>
+                        </div>
+                        <div>
+                            <strong class="text-gray-200 block mb-1">Wordpress-TG (Target Group)</strong>
+                            <p class="text-xs text-gray-500">Protocol: HTTP:80<br />Health check path: /<br />Success
+                                codes: 200–399</p>
+                        </div>
+                        <div>
+                            <strong class="text-gray-200 block mb-1">Live DNS Endpoint</strong>
+                            <p class="text-xs text-gray-500 break-all">
+                                wordpress-alb-214335329<br />.us-east-1.elb.amazonaws.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PHASE 4 -->
+                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">Phase 4 — Launch Template
+                    & Automation</h3>
+                <p class="text-gray-400 mb-6 leading-relaxed text-justify">
+                    The most technically interesting part of this project is the Launch Template's User Data script.
+                    Every time the Auto Scaling Group spins up a new EC2 instance, this bash script runs automatically
+                    and provisions the full LEMP stack — no manual SSH required.
+                </p>
+                <div class="bg-gray-900 rounded-xl border border-gray-700 shadow-xl p-6 mb-6">
+                    <strong class="text-gray-200 block mb-3">User Data Script — What it does (v3, final)</strong>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-start gap-3">
+                            <span class="text-orange-400 font-mono font-bold w-6 shrink-0">1.</span>
+                            <p class="text-gray-400">Updates system packages and installs <code>nginx</code>,
+                                <code>php</code>, <code>php-fpm</code>, <code>php-mysqlnd</code>, <code>php-json</code>,
+                                <code>wget</code>, <code>tar</code>
+                            </p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-orange-400 font-mono font-bold w-6 shrink-0">2.</span>
+                            <p class="text-gray-400">Patches PHP-FPM config to run under <code>nginx</code> user instead
+                                of <code>apache</code> — critical fix since PHP defaults to Apache</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-orange-400 font-mono font-bold w-6 shrink-0">3.</span>
+                            <p class="text-gray-400">Starts and enables <code>php-fpm</code> service</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-orange-400 font-mono font-bold w-6 shrink-0">4.</span>
+                            <p class="text-gray-400">Downloads latest WordPress, extracts to <code>/var/www/html/</code>
+                            </p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-orange-400 font-mono font-bold w-6 shrink-0">5.</span>
+                            <p class="text-gray-400">Auto-configures <code>wp-config.php</code> with RDS endpoint, DB
+                                name, credentials via <code>sed</code></p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-orange-400 font-mono font-bold w-6 shrink-0">6.</span>
+                            <p class="text-gray-400">Sets correct file ownership (<code>nginx:nginx</code>) and
+                                permissions on web root</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-orange-400 font-mono font-bold w-6 shrink-0">7.</span>
+                            <p class="text-gray-400">Removes conflicting default Nginx config, writes a custom
+                                <code>nginx.conf</code> with PHP-FPM socket passthrough
+                            </p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-orange-400 font-mono font-bold w-6 shrink-0">8.</span>
+                            <p class="text-gray-400">Starts and enables <code>nginx</code></p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-4">This script went through 3 iterations. The main bugs fixed
+                        were the PHP user mismatch (Apache vs Nginx) and the broken default Nginx config conflicting
+                        with the custom PHP passthrough config.</p>
+                </div>
+                <div class="bg-gray-900 rounded-xl border border-gray-700 p-5 mb-10">
+                    <strong class="text-gray-200 block mb-2">Launch Template Config</strong>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs text-gray-400 mt-2">
+                        <div><span class="text-gray-500 block mb-1">AMI</span>Amazon Linux 2023</div>
+                        <div><span class="text-gray-500 block mb-1">Instance Type</span>t3.micro</div>
+                        <div><span class="text-gray-500 block mb-1">Security Group</span>WEB-SG</div>
+                        <div><span class="text-gray-500 block mb-1">Key Pair</span>project-key (RSA)</div>
+                    </div>
+                </div>
+
+                <!-- PHASE 5 -->
+                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">Phase 5 — Auto Scaling
+                    Group</h3>
+                <p class="text-gray-400 mb-6 leading-relaxed text-justify">
+                    The Auto Scaling Group ties everything together. It uses the Launch Template to provision instances,
+                    registers them automatically with the ALB target group, and uses ELB health checks to detect and
+                    replace any unhealthy instance. A notable debugging step: the initial instances had no Public IPv4
+                    DNS — this was caused by the subnets not having auto-assign public IP enabled, which was fixed in
+                    the subnet settings.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                    <div class="bg-gray-900 rounded-xl border border-gray-700 p-5">
+                        <strong class="text-gray-200 block mb-3">Scaling Configuration</strong>
+                        <div class="space-y-2 text-sm text-gray-400">
+                            <div class="flex justify-between"><span>Minimum capacity</span><span
+                                    class="text-orange-400">2 instances</span></div>
+                            <div class="flex justify-between"><span>Maximum capacity</span><span
+                                    class="text-orange-400">4 instances</span></div>
+                            <div class="flex justify-between"><span>Availability Zones</span><span
+                                    class="text-orange-400">us-east-1a + 1b</span></div>
+                            <div class="flex justify-between"><span>Health check type</span><span
+                                    class="text-orange-400">ELB</span></div>
+                            <div class="flex justify-between"><span>AZ distribution</span><span
+                                    class="text-orange-400">Balanced best effort</span></div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 rounded-xl border border-gray-700 p-5">
+                        <strong class="text-gray-200 block mb-3">Self-Healing in Action</strong>
+                        <p class="text-sm text-gray-400 text-justify">The ASG activity log showed the system working
+                            exactly as designed: when an instance failed an ELB health check, the ASG automatically
+                            terminated it and launched a replacement. The activity history confirmed multiple successful
+                            launch-terminate cycles during troubleshooting, with the final state being 2 healthy
+                            instances both passing health checks.</p>
+                    </div>
+                </div>
+
+                <!-- RESULT -->
+                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">Result</h3>
+                <p class="text-gray-400 mb-6 leading-relaxed text-justify">
+                    The final infrastructure delivered a fully working WordPress blog accessible via the ALB DNS
+                    endpoint, with 2 healthy EC2 instances behind the load balancer, a live MySQL database on RDS, and a
+                    self-healing auto scaling group. WordPress was installed, configured, and a first blog post was
+                    published — confirming end-to-end data flow from browser through ALB → EC2 → RDS.
+                </p>
+
+                <!-- TECH STACK -->
+                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">Technology Stack</h3>
+                <div class="bg-gray-900/50 p-6 rounded-xl border border-gray-800 text-sm text-gray-400 space-y-3">
+                    <p><strong class="text-gray-200">Networking:</strong> AWS VPC, Public Subnets (Multi-AZ), Internet
+                        Gateway, Route Tables, Security Groups</p>
+                    <p><strong class="text-gray-200">Compute:</strong> Amazon EC2 (t3.micro, Amazon Linux 2023), Launch
+                        Templates, User Data (Bash)</p>
+                    <p><strong class="text-gray-200">Load Balancing:</strong> Application Load Balancer (ALB), Target
+                        Groups, Health Checks</p>
+                    <p><strong class="text-gray-200">Auto Scaling:</strong> EC2 Auto Scaling Group (min 2 / max 4), ELB
+                        health-driven replacement</p>
+                    <p><strong class="text-gray-200">Database:</strong> Amazon RDS MySQL (t3.micro, Single-AZ, 20 GiB
+                        gp2)</p>
+                    <p><strong class="text-gray-200">Web Stack:</strong> Nginx, PHP-FPM, WordPress — fully automated via
+                        boot script</p>
+                </div>
+
             </div>
 
-        </section> <!-- KAZARA SİLİNEN PORTFOLIO KAPANIS ETIKETI BURADA -->
+            <!-- Detail View: ONYX Market Intelligence -->
+            <div id="proj-onyx" class="project-detail hidden">
+                <button onclick="backToGrid()"
+                    class="text-blue-400 hover:text-blue-300 mb-8 flex items-center gap-2 transition-colors">
+                    ← Back to Portfolio
+                </button>
+                <h2 class="text-3xl font-bold mb-2 text-center">ONYX: Agentic Market Intelligence System</h2>
+                <p class="text-center text-cyan-400 text-sm mb-8 tracking-widest uppercase">LangChain · Gemini · Python
+                    · Gradio · SQLite · GitHub Actions</p>
+
+                <!-- APP SCREENSHOT -->
+                <div class="bg-gray-900 rounded-xl border border-gray-700 shadow-xl overflow-hidden mb-8">
+                    <img src="screenshot.png" alt="ONYX Market Intelligence Screenshot" class="w-full object-contain">
+                    <p class="text-xs text-gray-500 text-center py-3 px-4">📊 ONYX live dashboard — agentic trend report
+                        with visualizations generated from multi-platform data.</p>
+                </div>
+
+                <!-- LINKS BAR -->
+                <div class="flex justify-center gap-6 mb-10">
+                    <a href="https://github.com/UygarTatar/market-trend-analyzer" target="_blank"
+                        class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-white text-sm font-semibold py-2 px-5 rounded-full transition-all hover:scale-105 shadow">
+                        GitHub →
+                    </a>
+                    <a href="https://huggingface.co/spaces/UygarTatar/market-trend-analyzer" target="_blank"
+                        class="bg-cyan-900/40 hover:bg-cyan-800/60 border border-cyan-700 text-cyan-300 text-sm font-semibold py-2 px-5 rounded-full transition-all hover:scale-105 shadow">
+                        Live Demo (HuggingFace) →
+                    </a>
+                </div>
+
+                <!-- PROJECT OVERVIEW -->
+                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">Project Overview</h3>
+                <p class="text-gray-400 mb-8 leading-relaxed text-justify">
+                    ONYX is a fully autonomous, end-to-end market intelligence platform. You ask it a natural-language
+                    question — <em>"What mobile game genres are trending this week?"</em> — and a LangChain ReAct agent
+                    takes over: it scouts live data from Google Play, the Apple App Store, Steam, and Reddit
+                    simultaneously; runs a weighted trend-scoring algorithm; detects cross-platform overlap patterns;
+                    generates a structured analyst report via Gemini Flash; and then self-evaluates and revises that
+                    report against a 5-criteria rubric before presenting the final output alongside rich visualizations.
+                    <br><br>
+                    A nightly GitHub Actions workflow keeps the database fresh and auto-deploys the live app to
+                    HuggingFace Spaces, making ONYX a genuinely production-grade, always-on intelligence feed — not just
+                    a one-shot script.
+                </p>
+
+
+                <!-- ARCHITECTURE DIAGRAM -->
+                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">System Architecture</h3>
+                <p class="text-gray-400 mb-6 leading-relaxed text-justify">
+                    The system is organized into three distinct layers, each with a clearly defined responsibility:
+                </p>
+
+                <div class="bg-gray-900 rounded-xl border border-gray-700 shadow-xl p-6 mb-10 font-mono text-sm">
+                    <div class="text-cyan-400 text-center mb-4 font-bold">ONYX Pipeline</div>
+                    <pre class="text-gray-400 text-xs leading-relaxed overflow-x-auto">
+User Query (Gradio UI)
+        ↓
+  LangChain ReAct Agent  (gemini-3.1-flash-lite)
+        ↓
+  ┌──────────────────────────────────────┐
+  │            Agent Tools               │
+  │  • collect_mobile_app_data           │
+  │  • collect_mobile_game_data          │
+  │  • collect_pc_game_data              │
+  │  • compute_trends                    │
+  │  • detect_cross_platform             │
+  │  • generate_trend_report             │
+  └──────────────────────────────────────┘
+        ↓
+  SQLite  (7-day rolling snapshots)
+        ↓
+  Report Generator (Gemini Flash)
+        ↓
+  Evaluator LLM → Revision Loop (max 2×)
+        ↓
+  Final Report + Charts → Gradio UI</pre>
+
+                    <div class="grid grid-cols-3 gap-4 mt-6 text-center text-xs">
+                        <div class="bg-gray-800 rounded-lg p-3 border border-gray-700">
+                            <div class="text-cyan-400 font-bold mb-1">Directive Layer</div>
+                            <div class="text-gray-500">13 Markdown SOPs defining goals, inputs & outputs</div>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg p-3 border border-gray-700">
+                            <div class="text-cyan-400 font-bold mb-1">Orchestration Layer</div>
+                            <div class="text-gray-500">ReAct agent — routing, decisions, error recovery</div>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg p-3 border border-gray-700">
+                            <div class="text-cyan-400 font-bold mb-1">Execution Layer</div>
+                            <div class="text-gray-500">Deterministic Python scripts — collectors, analysis, reporting
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CORE COMPONENTS -->
+                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">1. Multi-Source Data
+                    Collection</h3>
+                <p class="text-gray-400 mb-6 leading-relaxed text-justify">
+                    The agent autonomously orchestrates data collection across four live platforms in a single pipeline
+                    run. Each collector is a deterministic Python module registered as a LangChain tool, so the agent
+                    can selectively call them based on the user's query.
+                </p>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+                    <div class="bg-gray-900 rounded-xl border border-gray-700 p-4 text-center">
+                        <div class="text-2xl mb-2">📱</div>
+                        <strong class="text-gray-200 text-sm block mb-1">Google Play</strong>
+                        <p class="text-xs text-gray-500">Top charts, ratings, installs, genres via google-play-scraper
+                        </p>
+                    </div>
+                    <div class="bg-gray-900 rounded-xl border border-gray-700 p-4 text-center">
+                        <div class="text-2xl mb-2">🍎</div>
+                        <strong class="text-gray-200 text-sm block mb-1">Apple App Store</strong>
+                        <p class="text-xs text-gray-500">Top free apps/games by category via iTunes RSS API</p>
+                    </div>
+                    <div class="bg-gray-900 rounded-xl border border-gray-700 p-4 text-center">
+                        <div class="text-2xl mb-2">🖥️</div>
+                        <strong class="text-gray-200 text-sm block mb-1">Steam</strong>
+                        <p class="text-xs text-gray-500">Top sellers, genres, pricing, reviews via Steam Web API +
+                            SteamSpy</p>
+                    </div>
+                    <div class="bg-gray-900 rounded-xl border border-gray-700 p-4 text-center">
+                        <div class="text-2xl mb-2">💬</div>
+                        <strong class="text-gray-200 text-sm block mb-1">Reddit Sentiment</strong>
+                        <p class="text-xs text-gray-500">PRAW across r/androidgaming, r/iosgaming, r/pcgaming</p>
+                    </div>
+                </div>
+
+                <!-- TREND SCORE -->
+                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">2. Weighted Trend Scoring
+                    Engine</h3>
+                <p class="text-gray-400 mb-6 leading-relaxed text-justify">
+                    Raw data alone doesn't tell you what's trending — you need a signal. I built a custom weighted
+                    formula that combines three independent market signals into a normalized score ranging from
+                    approximately −1.0 to +1.0:
+                </p>
+
+                <div class="bg-gray-900 rounded-xl border border-gray-700 shadow-xl p-6 mb-6">
+                    <p class="font-mono text-cyan-400 text-center text-lg mb-6">
+                        score = (rank_change × 0.4) + (review_delta × 0.3) + (sentiment_shift × 0.3)
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                        <div class="bg-gray-800 rounded-lg p-4">
+                            <strong class="text-gray-200 block mb-1">rank_change <span
+                                    class="text-cyan-500 font-mono">(40%)</span></strong>
+                            <p class="text-gray-500 text-xs">Normalized chart momentum: how quickly a title is climbing
+                                the charts relative to its prior position.</p>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg p-4">
+                            <strong class="text-gray-200 block mb-1">review_delta <span
+                                    class="text-cyan-500 font-mono">(30%)</span></strong>
+                            <p class="text-gray-500 text-xs">7-day review volume velocity: new reviews this week vs.
+                                last, revealing organic growth bursts.</p>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg p-4">
+                            <strong class="text-gray-200 block mb-1">sentiment_shift <span
+                                    class="text-cyan-500 font-mono">(30%)</span></strong>
+                            <p class="text-gray-500 text-xs">Reddit community signal derived from average upvote ratio,
+                                capturing grassroots hype before it shows in charts.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-gray-400 mb-10 leading-relaxed text-justify">
+                    A rolling 7-day snapshot system (SQLite) tracks historical baselines, so the delta calculations are
+                    always grounded in real prior state — not assumptions.
+                </p>
+
+                <!-- SELF-EVALUATING REPORTS -->
+                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">3. Self-Evaluating Report
+                    Generation</h3>
+                <p class="text-gray-400 mb-6 leading-relaxed text-justify">
+                    One of the more technically interesting aspects of this project is the report pipeline. Rather than
+                    simply generating a report and returning it, the system uses a second LLM call as an independent
+                    evaluator. Every generated report is automatically graded against a 5-criteria rubric:
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="bg-gray-900 rounded-xl border border-gray-700 p-5 space-y-3">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-300">All 3 market categories covered</span>
+                            <span class="text-cyan-400 font-mono">0.2</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-300">≥ 3 numeric data points cited</span>
+                            <span class="text-cyan-400 font-mono">0.2</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-300">Cross-market comparison section present</span>
+                            <span class="text-cyan-400 font-mono">0.2</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-300">Visualization reference included</span>
+                            <span class="text-cyan-400 font-mono">0.2</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-300">Clear conclusion / recommendation</span>
+                            <span class="text-cyan-400 font-mono">0.2</span>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 rounded-xl border border-gray-700 p-5 flex flex-col justify-center">
+                        <strong class="text-gray-200 block mb-3">Revision Loop</strong>
+                        <p class="text-gray-400 text-sm text-justify">If the evaluator scores a report below <strong
+                                class="text-cyan-400">0.7 / 1.0</strong>, the system automatically triggers a revision
+                            pass — feeding the score, the failing criteria, and the original report back to the
+                            generator. This loop runs a maximum of 2 times, ensuring quality without infinite retries.
+                        </p>
+                    </div>
+                </div>
+
+                <p class="text-gray-400 mb-10 leading-relaxed text-justify">
+                    This LLM-as-judge pattern is a core technique in production agentic systems, and implementing it
+                    end-to-end — including the structured JSON scoring response and the conditional revision branching —
+                    was the most challenging and rewarding part of the project.
+                </p>
+
+                <!-- CI/CD & DEPLOYMENT -->
+                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">4. Automated Deployment &
+                    Live Data Pipeline</h3>
+                <div class="bg-gray-900 rounded-xl border border-gray-700 shadow-xl p-6 mb-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <strong class="text-gray-200 block mb-2">Nightly GitHub Actions Workflow</strong>
+                            <p class="text-sm text-gray-400 text-justify">A scheduled cron job at 00:00 UTC runs the
+                                full data collection pipeline, updates the SQLite database with fresh snapshots, and
+                                pushes the updated database to HuggingFace Spaces — keeping the live demo's intelligence
+                                current every 24 hours automatically.</p>
+                        </div>
+                        <div>
+                            <strong class="text-gray-200 block mb-2">HuggingFace Spaces Deployment</strong>
+                            <p class="text-sm text-gray-400 text-justify">The Gradio app runs on HuggingFace Spaces (CPU
+                                Basic free tier). A second workflow handles code deployments via manual trigger. The app
+                                features a custom dark "ONYX Stealth" theme with Electric Cyan accents, a Command Center
+                                query tab, and an Intelligence Hub live stats panel.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TECH STACK -->
+                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">Technology Stack</h3>
+                <div class="bg-gray-900/50 p-6 rounded-xl border border-gray-800 text-sm text-gray-400 space-y-3 mb-10">
+                    <p><strong class="text-gray-200">LLM / Agent:</strong> Google Gemini Flash (gemini-3.1-flash-lite)
+                        via LangChain ReAct (<code>create_react_agent</code> + <code>AgentExecutor</code>)</p>
+                    <p><strong class="text-gray-200">Data Collection:</strong> google-play-scraper, iTunes RSS API,
+                        Steam Web API, SteamSpy, PRAW (Reddit)</p>
+                    <p><strong class="text-gray-200">Data Processing:</strong> Pandas 2.2, NumPy 1.26</p>
+                    <p><strong class="text-gray-200">Database:</strong> SQLite with auto-schema init, 7-day rolling
+                        snapshots</p>
+                    <p><strong class="text-gray-200">Visualization:</strong> Matplotlib 3.9 + Plotly 5.24 (trend bar
+                        charts, top-movers tables, genre pies)</p>
+                    <p><strong class="text-gray-200">UI & Deployment:</strong> Gradio v5, HuggingFace Spaces</p>
+                    <p><strong class="text-gray-200">CI/CD:</strong> GitHub Actions (nightly cron + manual HuggingFace
+                        sync)</p>
+                </div>
+
+                <!-- MY ROLE -->
+                <h3 class="text-xl font-bold mb-4 border-b border-gray-800 pb-2 text-gray-200">My Contribution</h3>
+                <ul class="list-disc pl-5 space-y-3 text-gray-400 leading-relaxed mb-10 text-justify">
+                    <li>Designed, architected, and built the entire end-to-end system as the <strong
+                            class="text-gray-200">sole creator and developer</strong>.</li>
+                    <li>Built all four <strong class="text-gray-200">live data collectors</strong> (Google Play scraper,
+                        App Store RSS parser, Steam Web API + SteamSpy wrapper, PRAW Reddit crawler).</li>
+                    <li>Designed and implemented the <strong class="text-gray-200">trend scoring engine</strong> —
+                        including the weighted signal formula, 7-day snapshot diff logic, and cross-platform overlap
+                        detection.</li>
+                    <li>Architected the <strong class="text-gray-200">LangChain ReAct agent orchestrator</strong> (using
+                        <code>gemini-3.1-flash-lite</code>) for autonomous multi-turn reasoning and tool invocation.
+                    </li>
+                    <li>Developed the <strong class="text-gray-200">LLM-as-a-Judge self-evaluation pipeline</strong>,
+                        grading generated report files against a 5-criteria quality rubric with a feedback-driven
+                        revision loop.</li>
+                    <li>Architected the <strong class="text-gray-200">SQLite database layer</strong> with automated
+                        schema migrations and rolling data retention patterns.</li>
+                    <li>Built the entire interactive <strong class="text-gray-200">Gradio web application</strong>,
+                        custom dark visual styling, and data visualization dashboards.</li>
+                    <li>Configured the complete <strong class="text-gray-200">CI/CD deployment pipeline</strong> via
+                        GitHub Actions schedules to automate nightly data collection, database updates, and HuggingFace
+                        Spaces syncing.</li>
+                </ul>
+
+            </div>
+
+        </section>
 
         <!-- ==================== RESUME TAB ==================== -->
         <section id="resume" class="tab-content hidden max-w-3xl mx-auto">
             <div class="flex justify-between items-center mb-10 border-b border-gray-800 pb-6">
                 <h2 class="text-4xl font-light">Resume</h2>
-                <a href="uygar-cv.pdf" target="_blank" class="bg-gray-800 hover:bg-gray-700 text-white py-2 px-6 rounded-full text-sm font-semibold transition-all hover:scale-105 border border-gray-600 shadow-lg">
+                <a href="uygar-cv.pdf" target="_blank"
+                    class="bg-gray-800 hover:bg-gray-700 text-white py-2 px-6 rounded-full text-sm font-semibold transition-all hover:scale-105 border border-gray-600 shadow-lg">
                     Download CV (PDF)
                 </a>
             </div>
@@ -266,7 +1240,12 @@
             <!-- Profile Section -->
             <h3 class="text-2xl font-bold mb-4 text-blue-400">Profile</h3>
             <p class="text-gray-300 mb-10 leading-relaxed text-justify">
-                Highly analytical <strong>graduating</strong> Computer Engineering student (3.59/4.00 GPA) focused on developing <strong>scalable, high-performance</strong> mobile games. Leveraging my strong background in C#, system optimization, and cloud infrastructure to create <strong>engaging core loops</strong> and <strong>hybrid-casual</strong> experiences. Adept at turning architectural theory into <strong>fun, monetizable gameplay</strong>, with a proven track record of <strong>rapid prototyping</strong> and implementing <strong>data-driven game mechanics</strong>.
+                Highly analytical <strong>graduating</strong> Computer Engineering student (3.59/4.00 GPA) focused on
+                developing <strong>scalable, high-performance</strong> mobile games. Leveraging my strong background in
+                C#, system optimization, and cloud infrastructure to create <strong>engaging core loops</strong> and
+                <strong>hybrid-casual</strong> experiences. Adept at turning architectural theory into <strong>fun,
+                    monetizable gameplay</strong>, with a proven track record of <strong>rapid prototyping</strong> and
+                implementing <strong>data-driven game mechanics</strong>.
             </p>
 
             <!-- Education Section -->
@@ -274,10 +1253,12 @@
             <div class="mb-10 relative pl-6 border-l-2 border-gray-800">
                 <div class="absolute w-3 h-3 bg-blue-500 rounded-full -left-[7px] top-2"></div>
                 <h4 class="text-lg font-bold text-gray-200">Bahcesehir University</h4>
-                <p class="text-gray-400 mt-1">Bachelor of Computer Engineering (GPA: 3.59/4.00) | Sept. 2022 – July 2026 (Expected)</p>
+                <p class="text-gray-400 mt-1">Bachelor of Computer Engineering (GPA: 3.59/4.00) | Sept. 2022 – July 2026
+                    (Expected)</p>
                 <ul class="list-disc pl-5 mt-2 space-y-1 text-gray-400 text-sm">
                     <li>Ranked <strong>2nd</strong> in the Computer Engineering Department among 3rd-year students.</li>
-                    <li>Relevant Coursework: Mobile Game Development, Game Business, Game Marketing, Deep Learning, Data Science, AWS Cloud Computing.</li>
+                    <li>Relevant Coursework: Mobile Game Development, Game Business, Game Marketing, Deep Learning, Data
+                        Science, AWS Cloud Computing.</li>
                 </ul>
             </div>
 
@@ -288,24 +1269,33 @@
                 <h4 class="text-lg font-bold text-gray-200">Software Development Intern – IFS Turkiye</h4>
                 <p class="text-sm text-gray-500 mb-3">June 2025 – Aug. 2025</p>
                 <ul class="list-disc pl-5 space-y-2 text-gray-400 text-sm text-justify">
-                    <li>Developed a real-time data visualization platform using <strong>Node.js, Express.js, and MongoDB</strong>.</li>
+                    <li>Developed a real-time data visualization platform using <strong>Node.js, Express.js, and
+                            MongoDB</strong>.</li>
                     <li>Optimized RESTful APIs and NoSQL schemas for high-performance data processing.</li>
-                    <li>Gained insight into large-scale ERP software lifecycles and industrial-grade development methodologies.</li>
+                    <li>Gained insight into large-scale ERP software lifecycles and industrial-grade development
+                        methodologies.</li>
                 </ul>
             </div>
 
             <!-- Projects Section -->
             <h3 class="text-2xl font-bold mb-6 text-blue-400">Projects</h3>
-            
+
             <div class="mb-8 relative pl-6 border-l-2 border-gray-800">
                 <div class="absolute w-3 h-3 bg-blue-500 rounded-full -left-[7px] top-2"></div>
                 <h4 class="text-lg font-bold text-gray-200">Press Tycoon Mobile Game | Unity, C#</h4>
                 <p class="text-sm text-gray-500 mb-2">Dec. 2025 – Present</p>
                 <ul class="list-disc pl-5 space-y-2 text-gray-400 text-sm text-justify">
-                    <li>Engineered a lightweight <strong>Dependency Injection (DI)</strong> architecture and <strong>Object Pooling</strong> system, minimizing code coupling and optimizing runtime efficiency for mobile constraints.</li>
-                    <li>Developed a <strong>data-driven, scalable</strong> upgrade system utilizing interface-based service resolution (IMoneyService, etc.) and dynamic prefab generation for rapid iteration.</li>
-                    <li>Integrated <strong>GameAnalytics SDK</strong> to build dashboards, tracking in-game events, player funnels, and session metrics.</li>
-                    <li>Designed core gameplay loops focusing on marketability, applying theoretical concepts of <strong>CPI, LTV, retention, and "Tiktokability"</strong> to evaluate product viability.</li>
+                    <li>Engineered a lightweight <strong>Dependency Injection (DI)</strong> architecture and
+                        <strong>Object Pooling</strong> system, minimizing code coupling and optimizing runtime
+                        efficiency for mobile constraints.
+                    </li>
+                    <li>Developed a <strong>data-driven, scalable</strong> upgrade system utilizing interface-based
+                        service resolution (IMoneyService, etc.) and dynamic prefab generation for rapid iteration.</li>
+                    <li>Integrated <strong>GameAnalytics SDK</strong> to build dashboards, tracking in-game events,
+                        player funnels, and session metrics.</li>
+                    <li>Designed core gameplay loops focusing on marketability, applying theoretical concepts of
+                        <strong>CPI, LTV, retention, and "Tiktokability"</strong> to evaluate product viability.
+                    </li>
                 </ul>
             </div>
 
@@ -314,80 +1304,115 @@
                 <h4 class="text-lg font-bold text-gray-200">Game Business & Marketing Academic Projects</h4>
                 <p class="text-sm text-gray-500 mb-2">Spring 2025 – Fall 2025</p>
                 <ul class="list-disc pl-5 space-y-2 text-gray-400 text-sm text-justify">
-                    <li>Formulated a comprehensive <strong>business plan</strong> for a fictional studio "Waterproof Games", detailing cost analysis, budget forecasting (Excel), and <strong>monetization</strong> strategies.</li>
-                    <li>Designed and presented a professional <strong>pitch deck</strong> for a PC game concept "Leviathan Protocol", focusing on <strong>target audience</strong> acquisition and market positioning.</li>
+                    <li>Formulated a comprehensive <strong>business plan</strong> for a fictional studio "Waterproof
+                        Games", detailing cost analysis, budget forecasting (Excel), and <strong>monetization</strong>
+                        strategies.</li>
+                    <li>Designed and presented a professional <strong>pitch deck</strong> for a PC game concept
+                        "Leviathan Protocol", focusing on <strong>target audience</strong> acquisition and market
+                        positioning.</li>
                 </ul>
             </div>
 
             <div class="mb-8 relative pl-6 border-l-2 border-gray-800">
                 <div class="absolute w-3 h-3 bg-blue-500 rounded-full -left-[7px] top-2"></div>
-                <h4 class="text-lg font-bold text-gray-200">Social Movie Recommendation System | NestJS, PostgreSQL, FastAPI, Python</h4>
+                <h4 class="text-lg font-bold text-gray-200">Social Movie Recommendation System | NestJS, PostgreSQL,
+                    FastAPI, Python</h4>
                 <p class="text-sm text-gray-500 mb-2">Dec. 2025 – Present</p>
                 <ul class="list-disc pl-5 space-y-2 text-gray-400 text-sm text-justify">
-                    <li>Built a personalized recommendation pipeline by integrating a <strong>FastAPI AI engine</strong> with a NestJS backend, dynamically fetching <strong>user-based movie suggestions</strong> from review history.</li>
-                    <li>Designed and implemented recommendation models in Python, including dynamic item-based filtering, SVD collaborative filtering, and a retraining pipeline that updates recommendations from newly collected user ratings.</li>
+                    <li>Built a personalized recommendation pipeline by integrating a <strong>FastAPI AI engine</strong>
+                        with a NestJS backend, dynamically fetching <strong>user-based movie suggestions</strong> from
+                        review history.</li>
+                    <li>Designed and implemented recommendation models in Python, including dynamic item-based
+                        filtering, SVD collaborative filtering, and a retraining pipeline that updates recommendations
+                        from newly collected user ratings.</li>
                 </ul>
             </div>
 
             <div class="mb-10 relative pl-6 border-l-2 border-gray-800">
                 <div class="absolute w-3 h-3 bg-blue-500 rounded-full -left-[7px] top-2"></div>
-                <h4 class="text-lg font-bold text-gray-200">AWS Cloud Infrastructure Project | AWS, VPC, ALB, ASG, S3</h4>
+                <h4 class="text-lg font-bold text-gray-200">AWS Cloud Infrastructure Project | AWS, VPC, ALB, ASG, S3
+                </h4>
                 <p class="text-sm text-gray-500 mb-2">Jan. 2026</p>
                 <ul class="list-disc pl-5 space-y-2 text-gray-400 text-sm text-justify">
-                    <li>Designed a <strong>high-availability</strong> network using VPC and Private Subnets with NAT Gateways for secure isolation.</li>
-                    <li>Implemented <strong>Application Load Balancers</strong> and Auto Scaling Groups to ensure system uptime and <strong>scalability</strong>.</li>
+                    <li>Designed a <strong>high-availability</strong> network using VPC and Private Subnets with NAT
+                        Gateways for secure isolation.</li>
+                    <li>Implemented <strong>Application Load Balancers</strong> and Auto Scaling Groups to ensure system
+                        uptime and <strong>scalability</strong>.</li>
                 </ul>
             </div>
 
             <!-- Technical Skills Section -->
             <h3 class="text-2xl font-bold mb-6 text-blue-400">Technical Skills</h3>
             <div class="bg-gray-900/50 p-6 rounded-xl border border-gray-800 text-sm text-gray-400 space-y-3">
-                <p><strong>Languages:</strong> C#, C++, JavaScript, Typescript, Java, Python, SQL (Oracle, PostgreSQL), HTML/CSS</p>
+                <p><strong>Languages:</strong> C#, C++, JavaScript, Typescript, Java, Python, SQL (Oracle, PostgreSQL),
+                    HTML/CSS</p>
                 <p><strong>Frameworks & Engines:</strong> Node.js, Express.js, Nestjs, FastAPI, Unity Engine</p>
-                <p><strong>Cloud & Tools:</strong> AWS (VPC, EC2, S3, ALB), Git, MongoDB, Docker, VS Code, Visual Studio</p>
-                <p><strong>Extracurriculars:</strong> Co-Founder at BAU Piston Student Club | C-Level Licensed Motorsport Marshal (TOSFED) | TEMA Foundation Volunteer</p>
+                <p><strong>Cloud & Tools:</strong> AWS (VPC, EC2, S3, ALB), Git, MongoDB, Docker, VS Code, Visual Studio
+                </p>
+                <p><strong>Extracurriculars:</strong> Co-Founder at BAU Piston Student Club | C-Level Licensed
+                    Motorsport Marshal (TOSFED) | TEMA Foundation Volunteer</p>
             </div>
         </section>
         <!-- ==================== BIO TAB ==================== -->
         <section id="bio" class="tab-content hidden max-w-4xl mx-auto">
             <h2 class="text-4xl font-light mb-10 border-b border-gray-800 pb-6">Bio</h2>
-            
+
             <p class="text-xl font-medium text-gray-200 mb-6 leading-relaxed">
-                A lifelong gamer turned Computer Engineer, passionate about building scalable systems, hit mobile mechanics, and engaging gameplay experiences.
+                A lifelong gamer turned Computer Engineer, passionate about building scalable systems, hit mobile
+                mechanics, and engaging gameplay experiences.
             </p>
 
             <p class="text-gray-400 mb-12 leading-relaxed text-justify">
-                I’ve been a passionate gamer since I was 9 years old, actively exploring almost every genre and platform imaginable. Today, I bring that lifelong passion into my career as a developer. I bring a blend of engineering discipline and creative game design, collaborating closely with development tools like Unity and AWS to craft systems that excite players and drive results. From backend databases to frontend user interfaces, I take pride in shaping software that’s not only highly optimized and functional but also contributes meaningfully to player engagement. Whether I'm designing a mathematically sound idle economy or architecting a robust cloud infrastructure, my goal is always to deliver experiences that are fun, polished, and technically sound.
+                I’ve been a passionate gamer since I was 9 years old, actively exploring almost every genre and platform
+                imaginable. Today, I bring that lifelong passion into my career as a developer. I bring a blend of
+                engineering discipline and creative game design, collaborating closely with development tools like Unity
+                and AWS to craft systems that excite players and drive results. From backend databases to frontend user
+                interfaces, I take pride in shaping software that’s not only highly optimized and functional but also
+                contributes meaningfully to player engagement. Whether I'm designing a mathematically sound idle economy
+                or architecting a robust cloud infrastructure, my goal is always to deliver experiences that are fun,
+                polished, and technically sound.
             </p>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
                 <!-- Left Column: Favorite Games -->
                 <div>
-                    <h3 class="text-2xl font-bold mb-6 text-blue-400 border-b border-gray-800 pb-2">Some of my favourite genres & games</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-blue-400 border-b border-gray-800 pb-2">Some of my favourite
+                        genres & games</h3>
                     <ul class="space-y-3 text-gray-400 text-sm">
-                        <li><strong class="text-gray-200">Competitive:</strong> League of Legends, CS2, Battlefield (Fan since BF4), Doom Eternal, Doom: The Dark Ages</li>
-                        <li><strong class="text-gray-200">FPS:</strong> Battlefield (Fan since BF4), Doom Eternal, Doom: The Dark Ages</li>
-                        <li><strong class="text-gray-200">Extraction Shooters:</strong> Escape from Tarkov, ARC Raiders</li>
-                        <li><strong class="text-gray-200">Roguelike & Souls-like:</strong> Dark Souls (1-3), Sifu, Dead Cells, Hades, Vampire Survivors, Balatro</li>
-                        <li><strong class="text-gray-200">RPG & Adventure:</strong> Cyberpunk 2077, Assassin's Creed (Origins/Odyssey), Ori (Blind Forest / Will of the Wisps)</li>
-                        <li><strong class="text-gray-200">Survival & Sandbox:</strong> Subnautica & Below Zero, Valheim, Minecraft</li>
-                        <li><strong class="text-gray-200">Strategy:</strong> Europa Universalis IV, Age of Empires 2</li>
+                        <li><strong class="text-gray-200">Competitive:</strong> League of Legends, CS2, Battlefield (Fan
+                            since BF4), Doom Eternal, Doom: The Dark Ages</li>
+                        <li><strong class="text-gray-200">FPS:</strong> Battlefield (Fan since BF4), Doom Eternal, Doom:
+                            The Dark Ages</li>
+                        <li><strong class="text-gray-200">Extraction Shooters:</strong> Escape from Tarkov, ARC Raiders
+                        </li>
+                        <li><strong class="text-gray-200">Roguelike & Souls-like:</strong> Dark Souls (1-3), Sifu, Dead
+                            Cells, Hades, Vampire Survivors, Balatro</li>
+                        <li><strong class="text-gray-200">RPG & Adventure:</strong> Cyberpunk 2077, Assassin's Creed
+                            (Origins/Odyssey), Ori (Blind Forest / Will of the Wisps)</li>
+                        <li><strong class="text-gray-200">Survival & Sandbox:</strong> Subnautica & Below Zero, Valheim,
+                            Minecraft</li>
+                        <li><strong class="text-gray-200">Strategy:</strong> Europa Universalis IV, Age of Empires 2
+                        </li>
                         <li><strong class="text-gray-200">Sim Racing:</strong> iRacing, Assetto Corsa Competizione</li>
-                        <li><strong class="text-gray-200">Mobile:</strong> Clash Royale, Archero, Color Block Jam, Chess</li>
+                        <li><strong class="text-gray-200">Mobile:</strong> Clash Royale, Archero, Color Block Jam, Chess
+                        </li>
                     </ul>
                 </div>
 
                 <!-- Right Column: What Excites Me -->
                 <div>
-                    <h3 class="text-2xl font-bold mb-6 text-blue-400 border-b border-gray-800 pb-2">What gets me excited about games</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-blue-400 border-b border-gray-800 pb-2">What gets me excited
+                        about games</h3>
                     <ul class="list-disc pl-5 space-y-3 text-gray-400 text-sm">
                         <li>I’m passionate about creating responsive, skill-driven, and captivating core gameplay.</li>
                         <li>Fulfilling and rewarding progression systems backed by data analytics and solid math.</li>
                         <li>Gaining more loot, levelling up, unlocking abilities, and becoming more powerful.</li>
                         <li>Simple, scalable, and intuitive build crafting opportunities.</li>
-                        <li>Games that balance depth with simplicity, offering satisfying decision-making and intriguing challenges.</li>
+                        <li>Games that balance depth with simplicity, offering satisfying decision-making and intriguing
+                            challenges.</li>
                         <li>The intersection of hardware precision and software engineering.</li>
-                        <li>Making interesting decisions on what cards, buffs, or abilities to take that have a large impact on the outcome.</li>
+                        <li>Making interesting decisions on what cards, buffs, or abilities to take that have a large
+                            impact on the outcome.</li>
                         <li>Polished, free-to-play mobile experiences.</li>
                     </ul>
                 </div>
@@ -399,7 +1424,10 @@
                     <span class="text-blue-500">⚡</span> Beyond the Screen
                 </h3>
                 <p class="text-sm text-gray-400 leading-relaxed text-justify">
-                    Outside of coding and game development, I am deeply interested in racing and I am a marshall at TOSFED. I am an avid sim racing rig enthusiast, combining my love for automotive precision with virtual environments. I also spend time practising guitar and also really like to take a walk around the city as much as I can.  
+                    Outside of coding and game development, I am deeply interested in racing and I am a marshall at
+                    TOSFED. I am an avid sim racing rig enthusiast, combining my love for automotive precision with
+                    virtual environments. I also spend time practising guitar and also really like to take a walk around
+                    the city as much as I can.
                 </p>
             </div>
         </section>
@@ -407,23 +1435,27 @@
         <!-- ==================== CONTACT TAB ==================== -->
         <section id="contact" class="tab-content hidden max-w-2xl mx-auto text-center">
             <h2 class="text-4xl font-light mb-6">Let's Connect</h2>
-            <p class="text-gray-400 mb-10">Whether it's about a potential role, a project collaboration, or talking about game economies, feel free to reach out.</p>
-            
+            <p class="text-gray-400 mb-10">Whether it's about a potential role, a project collaboration, or talking
+                about game economies, feel free to reach out.</p>
+
             <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 shadow-2xl relative overflow-hidden">
                 <!-- Arkaplan Dekoru -->
                 <div class="absolute -top-24 -right-24 w-48 h-48 bg-blue-600/10 rounded-full blur-3xl"></div>
-                
-                <a href="mailto:uygartatar52@gmail.com" class="block text-3xl font-light text-white hover:text-blue-400 mb-8 transition-colors relative z-10">
+
+                <a href="mailto:uygartatar52@gmail.com"
+                    class="block text-3xl font-light text-white hover:text-blue-400 mb-8 transition-colors relative z-10">
                     uygartatar52@gmail.com
                 </a>
-                
+
                 <div class="flex justify-center space-x-8 mt-8 border-t border-gray-800 pt-8 relative z-10">
                     <!-- LinkedIn Linki -->
-                    <a href="https://www.linkedin.com/in/uygar-tatar-08a1192a5" target="_blank" class="text-gray-500 hover:text-blue-400 transition-colors font-semibold tracking-wider uppercase text-sm">
+                    <a href="https://www.linkedin.com/in/uygar-tatar-08a1192a5" target="_blank"
+                        class="text-gray-500 hover:text-blue-400 transition-colors font-semibold tracking-wider uppercase text-sm">
                         LinkedIn
                     </a>
                     <!-- GitHub Linki -->
-                    <a href="https://github.com/UygarTatar" target="_blank" class="text-gray-500 hover:text-blue-400 transition-colors font-semibold tracking-wider uppercase text-sm">
+                    <a href="https://github.com/UygarTatar" target="_blank"
+                        class="text-gray-500 hover:text-blue-400 transition-colors font-semibold tracking-wider uppercase text-sm">
                         GitHub
                     </a>
                 </div>
@@ -444,18 +1476,18 @@
                 el.classList.remove('fade-in');
                 el.classList.add('hidden');
             });
-            
+
             // Seçilen içeriği göster ve biraz gecikmeyle animasyon class'ını ekle (tarayıcı render etsin diye)
             const selectedTab = document.getElementById(tabId);
             selectedTab.classList.remove('hidden');
-            
+
             // Küçük bir timeout, animasyonun her tıklamada baştan tetiklenmesini sağlar
             setTimeout(() => {
                 selectedTab.classList.add('fade-in');
             }, 10);
 
             // Eğer portfolio sekmesine dönülüyorsa, detayları gizle grid'i göster
-            if(tabId === 'portfolio') {
+            if (tabId === 'portfolio') {
                 backToGrid(false); // false: yukarı kaydırma yapma
             }
 
@@ -464,7 +1496,7 @@
                 el.classList.remove('active', 'text-blue-400');
             });
             document.getElementById('nav-' + tabId).classList.add('active', 'text-blue-400');
-            
+
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
@@ -474,14 +1506,14 @@
                 el.classList.add('hidden');
                 el.classList.remove('fade-in');
             });
-            
+
             const proj = document.getElementById(projectId);
             proj.classList.remove('hidden');
-            
+
             setTimeout(() => {
                 proj.classList.add('fade-in');
             }, 10);
-            
+
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
@@ -489,16 +1521,17 @@
             document.querySelectorAll('.project-detail').forEach(el => {
                 el.classList.add('hidden');
             });
-            
+
             const grid = document.getElementById('portfolio-grid');
             grid.classList.remove('hidden');
-            
+
             setTimeout(() => {
                 grid.classList.add('fade-in');
             }, 10);
-            
-            if(scroll) window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            if (scroll) window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
+
 </html>
