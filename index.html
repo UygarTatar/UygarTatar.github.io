@@ -378,7 +378,9 @@
                 <div class="bg-gray-900 rounded-xl border border-gray-700 shadow-xl overflow-hidden mb-8">
                     <img src="screenshot_movie.png" alt="MatchCut Movie Recommendation System Screenshot"
                         class="w-full object-contain">
-                    <p class="text-xs text-gray-500 text-center py-3 px-4">🎬 MatchCut web application — interactive recommendation dashboard displaying collaborative filtering predictions and content-based metadata metrics.</p>
+                    <p class="text-xs text-gray-500 text-center py-3 px-4">🎬 MatchCut web application — interactive
+                        recommendation dashboard displaying collaborative filtering predictions and content-based
+                        metadata metrics.</p>
                 </div>
 
                 <!-- LINKS BAR -->
@@ -559,14 +561,16 @@ User Request  →  NestJS RecommendationsService
                                 class="text-purple-400 font-mono font-bold w-6 shrink-0">4.</span>
                             <p class="text-gray-400">Run <code>standalone_train.py</code> to train the SVD Matrix
                                 Factorization model (100 latent factors, 20 training epochs) via
-                                <code>scikit-surprise</code> on 100% of merged data.</p>
+                                <code>scikit-surprise</code> on 100% of merged data.
+                            </p>
                         </div>
                         <div class="flex items-start gap-3"><span
                                 class="text-purple-400 font-mono font-bold w-6 shrink-0">5.</span>
                             <p class="text-gray-400">Serialize model to <code>movie_recommender.pkl</code> and upload to
                                 <strong class="text-gray-200">DigitalOcean Spaces</strong> (S3-compatible). The workflow
                                 then triggers an SSH <code>docker restart movie_ai</code> on the production server to
-                                reload the fresh model without downtime.</p>
+                                reload the fresh model without downtime.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -1240,12 +1244,13 @@ User Query (Gradio UI)
             <!-- Profile Section -->
             <h3 class="text-2xl font-bold mb-4 text-blue-400">Profile</h3>
             <p class="text-gray-300 mb-10 leading-relaxed text-justify">
-                Highly analytical <strong>graduating</strong> Computer Engineering student (3.59/4.00 GPA) focused on
-                developing <strong>scalable, high-performance</strong> mobile games. Leveraging my strong background in
-                C#, system optimization, and cloud infrastructure to create <strong>engaging core loops</strong> and
-                <strong>hybrid-casual</strong> experiences. Adept at turning architectural theory into <strong>fun,
-                    monetizable gameplay</strong>, with a proven track record of <strong>rapid prototyping</strong> and
-                implementing <strong>data-driven game mechanics</strong>.
+                Graduating Computer Engineering student (3.59/4.00 GPA, <strong>ranked 2nd in department</strong>) with
+                a strong foundation in software engineering across AI systems, backend development, cloud
+                infrastructure, and mobile game development. I enjoy working on technically challenging problems
+                end-to-end — from system design to deployment — and have a track record of shipping production-ready
+                projects independently. Equally comfortable in Python, TypeScript, and C#, with a growing focus on
+                <strong>applied AI and LLM-powered systems</strong>. Driven by clean architecture, real-world impact,
+                and the pursuit of building things that actually work at scale.
             </p>
 
             <!-- Education Section -->
@@ -1325,6 +1330,27 @@ User Query (Gradio UI)
                     <li>Designed and implemented recommendation models in Python, including dynamic item-based
                         filtering, SVD collaborative filtering, and a retraining pipeline that updates recommendations
                         from newly collected user ratings.</li>
+                </ul>
+            </div>
+
+            <div class="mb-8 relative pl-6 border-l-2 border-gray-800">
+                <div class="absolute w-3 h-3 bg-blue-500 rounded-full -left-[7px] top-2"></div>
+                <h4 class="text-lg font-bold text-gray-200">ONYX — Agentic Market Intelligence System | LangChain,
+                    Gemini, Python</h4>
+                <p class="text-sm text-gray-500 mb-2">Spring 2026</p>
+                <ul class="list-disc pl-5 space-y-2 text-gray-400 text-sm text-justify">
+                    <li>Designed and built a fully autonomous <strong>LangChain ReAct agent</strong> that collects live
+                        market data from Google Play, App Store, Steam, and Reddit simultaneously, then produces
+                        structured analyst reports via <strong>Gemini Flash</strong>.</li>
+                    <li>Engineered a <strong>weighted trend-scoring engine</strong> (rank momentum × 0.4 + review
+                        velocity × 0.3 + Reddit sentiment × 0.3) with a 7-day SQLite rolling snapshot system for
+                        delta-based signal calculation.</li>
+                    <li>Implemented an <strong>LLM-as-a-Judge self-evaluation loop</strong>: a second model instance
+                        grades every generated report against a 5-criteria rubric and triggers autonomous revision
+                        passes until quality threshold (0.7/1.0) is met.</li>
+                    <li>Deployed to <strong>HuggingFace Spaces</strong> with a nightly <strong>GitHub Actions CI/CD
+                            pipeline</strong> that refreshes the database and syncs the live app automatically every 24
+                        hours.</li>
                 </ul>
             </div>
 
