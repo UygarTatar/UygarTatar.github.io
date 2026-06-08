@@ -1235,7 +1235,7 @@ User Query (Gradio UI)
         <section id="resume" class="tab-content hidden max-w-3xl mx-auto">
             <div class="flex justify-between items-center mb-10 border-b border-gray-800 pb-6">
                 <h2 class="text-4xl font-light">Resume</h2>
-                <a href="uygar-cv.pdf" target="_blank"
+                <a href="uygar-cv.pdf?v=2" target="_blank"
                     class="bg-gray-800 hover:bg-gray-700 text-white py-2 px-6 rounded-full text-sm font-semibold transition-all hover:scale-105 border border-gray-600 shadow-lg">
                     Download CV (PDF)
                 </a>
@@ -1262,8 +1262,8 @@ User Query (Gradio UI)
                     (Expected)</p>
                 <ul class="list-disc pl-5 mt-2 space-y-1 text-gray-400 text-sm">
                     <li>Ranked <strong>2nd</strong> in the Computer Engineering Department among 3rd-year students.</li>
-                    <li>Relevant Coursework: Mobile Game Development, Game Business, Game Marketing, Deep Learning, Data
-                        Science, AWS Cloud Computing.</li>
+                    <li>Relevant Coursework: ATP - Applied LLMs, Deep Learning, Data Science with Python, AWS Cloud
+                        Computing.</li>
                 </ul>
             </div>
 
@@ -1287,37 +1287,37 @@ User Query (Gradio UI)
 
             <div class="mb-8 relative pl-6 border-l-2 border-gray-800">
                 <div class="absolute w-3 h-3 bg-blue-500 rounded-full -left-[7px] top-2"></div>
-                <h4 class="text-lg font-bold text-gray-200">Social Movie Recommendation System | NestJS, PostgreSQL,
-                    FastAPI, Python</h4>
-                <p class="text-sm text-gray-500 mb-2">Dec. 2025 – Present</p>
-                <ul class="list-disc pl-5 space-y-2 text-gray-400 text-sm text-justify">
-                    <li>Built a personalized recommendation pipeline by integrating a <strong>FastAPI AI engine</strong>
-                        with a NestJS backend, dynamically fetching <strong>user-based movie suggestions</strong> from
-                        review history.</li>
-                    <li>Designed and implemented recommendation models in Python, including dynamic item-based
-                        filtering, SVD collaborative filtering, and a retraining pipeline that updates recommendations
-                        from newly collected user ratings.</li>
-                </ul>
-            </div>
-
-            <div class="mb-8 relative pl-6 border-l-2 border-gray-800">
-                <div class="absolute w-3 h-3 bg-blue-500 rounded-full -left-[7px] top-2"></div>
-                <h4 class="text-lg font-bold text-gray-200">ONYX — Agentic Market Intelligence System | LangChain,
+                <h4 class="text-lg font-bold text-gray-200">ONYX - Agentic Market Intelligence System | LangChain,
                     Gemini, Python</h4>
                 <p class="text-sm text-gray-500 mb-2">Spring 2026</p>
                 <ul class="list-disc pl-5 space-y-2 text-gray-400 text-sm text-justify">
                     <li>Designed and built a fully autonomous <strong>LangChain ReAct agent</strong> that collects live
-                        market data from Google Play, App Store, Steam, and Reddit simultaneously, then produces
-                        structured analyst reports via <strong>Gemini Flash</strong>.</li>
+                        market data from Google Play, App Store, Steam, and Reddit simultaneously, producing structured
+                        analyst reports via Gemini Flash.</li>
                     <li>Engineered a <strong>weighted trend-scoring engine</strong> (rank momentum × 0.4 + review
                         velocity × 0.3 + Reddit sentiment × 0.3) with a 7-day SQLite rolling snapshot system for
                         delta-based signal calculation.</li>
                     <li>Implemented an <strong>LLM-as-a-Judge self-evaluation loop</strong>: a second model instance
                         grades every generated report against a 5-criteria rubric and triggers autonomous revision
                         passes until quality threshold (0.7/1.0) is met.</li>
-                    <li>Deployed to <strong>HuggingFace Spaces</strong> with a nightly <strong>GitHub Actions CI/CD
-                            pipeline</strong> that refreshes the database and syncs the live app automatically every 24
-                        hours.</li>
+                </ul>
+            </div>
+
+            <div class="mb-8 relative pl-6 border-l-2 border-gray-800">
+                <div class="absolute w-3 h-3 bg-blue-500 rounded-full -left-[7px] top-2"></div>
+                <h4 class="text-lg font-bold text-gray-200">MatchCut — Social Movie Recommendation Platform | FastAPI,
+                    NestJS, PostgreSQL, Python</h4>
+                <p class="text-sm text-gray-500 mb-2">Dec. 2025 – Present</p>
+                <ul class="list-disc pl-5 space-y-2 text-gray-400 text-sm text-justify">
+                    <li>Built a <strong>hybrid AI recommendation engine</strong> combining SVD matrix factorization,
+                        item-item collaborative filtering, content-based similarity (TF-IDF + SentenceTransformers), and
+                        a cold-start module — served via FastAPI and integrated into a NestJS backend.</li>
+                    <li>Designed <strong>adaptive weight scheduling</strong> that shifts blending ratio from
+                        content-heavy (85%) to CF-dominant (75%) as user rating count grows, with exponential decay for
+                        cold-start anchoring.</li>
+                    <li>Automated weekly <strong>SVD model retraining</strong> via GitHub Actions CI/CD: merges
+                        MovieLens 25M with live PostgreSQL ratings, runs RMSE health checks, and hot-reloads the
+                        production container.</li>
                 </ul>
             </div>
 
@@ -1345,11 +1345,8 @@ User Query (Gradio UI)
                     </li>
                     <li>Developed a <strong>data-driven, scalable</strong> upgrade system utilizing interface-based
                         service resolution (IMoneyService, etc.) and dynamic prefab generation for rapid iteration.</li>
-                    <li>Integrated <strong>GameAnalytics SDK</strong> to build dashboards, tracking in-game events,
-                        player funnels, and session metrics.</li>
-                    <li>Designed core gameplay loops focusing on marketability, applying theoretical concepts of
-                        <strong>CPI, LTV, retention, and "Tiktokability"</strong> to evaluate product viability.
-                    </li>
+                    <li>Integrated <strong>GameAnalytics SDK</strong> to build dashboards, tracking in-game events and
+                        player funnels.</li>
                 </ul>
             </div>
 
@@ -1383,21 +1380,28 @@ User Query (Gradio UI)
         <section id="bio" class="tab-content hidden max-w-4xl mx-auto">
             <h2 class="text-4xl font-light mb-10 border-b border-gray-800 pb-6">Bio</h2>
 
-            <p class="text-xl font-medium text-gray-200 mb-6 leading-relaxed">
-                A lifelong gamer turned Computer Engineer, passionate about building scalable systems, hit mobile
-                mechanics, and engaging gameplay experiences.
-            </p>
-
-            <p class="text-gray-400 mb-12 leading-relaxed text-justify">
-                I’ve been a passionate gamer since I was 9 years old, actively exploring almost every genre and platform
-                imaginable. Today, I bring that lifelong passion into my career as a developer. I bring a blend of
-                engineering discipline and creative game design, collaborating closely with development tools like Unity
-                and AWS to craft systems that excite players and drive results. From backend databases to frontend user
-                interfaces, I take pride in shaping software that’s not only highly optimized and functional but also
-                contributes meaningfully to player engagement. Whether I'm designing a mathematically sound idle economy
-                or architecting a robust cloud infrastructure, my goal is always to deliver experiences that are fun,
-                polished, and technically sound.
-            </p>
+            <!-- Photo + Intro -->
+            <div class="flex flex-col md:flex-row gap-10 mb-12 items-start">
+                <div class="shrink-0 mx-auto md:mx-0">
+                    <img src="me.jpg" alt="Uygar Tatar"
+                        class="w-48 h-48 rounded-2xl object-cover border-2 border-gray-700 shadow-xl">
+                </div>
+                <div>
+                    <p class="text-xl font-medium text-gray-200 mb-6 leading-relaxed">
+                        A lifelong gamer turned Computer Engineer, passionate about building intelligent systems,
+                        scalable backends, and the kind of game mechanics that keep players coming back.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed text-justify">
+                        I've been gaming since I was 9 — exploring almost every genre and platform imaginable. That
+                        obsession with how games <em>feel</em>, <em>progress</em>, and <em>retain</em> players
+                        eventually pulled me toward the engineering side. Today I build the systems behind those
+                        experiences: recommendation engines, agentic AI pipelines, cloud infrastructure, and mobile game
+                        architectures. I'm drawn to problems that sit at the intersection of technical depth and
+                        real-world impact — whether that's designing a mathematically sound idle economy or implementing
+                        an LLM-as-a-Judge self-evaluation loop.
+                    </p>
+                </div>
+            </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
                 <!-- Left Column: Favorite Games -->
@@ -1405,8 +1409,7 @@ User Query (Gradio UI)
                     <h3 class="text-2xl font-bold mb-6 text-blue-400 border-b border-gray-800 pb-2">Some of my favourite
                         genres & games</h3>
                     <ul class="space-y-3 text-gray-400 text-sm">
-                        <li><strong class="text-gray-200">Competitive:</strong> League of Legends, CS2, Battlefield (Fan
-                            since BF4), Doom Eternal, Doom: The Dark Ages</li>
+                        <li><strong class="text-gray-200">Competitive:</strong> League of Legends, CS2</li>
                         <li><strong class="text-gray-200">FPS:</strong> Battlefield (Fan since BF4), Doom Eternal, Doom:
                             The Dark Ages</li>
                         <li><strong class="text-gray-200">Extraction Shooters:</strong> Escape from Tarkov, ARC Raiders
@@ -1428,18 +1431,15 @@ User Query (Gradio UI)
                 <!-- Right Column: What Excites Me -->
                 <div>
                     <h3 class="text-2xl font-bold mb-6 text-blue-400 border-b border-gray-800 pb-2">What gets me excited
-                        about games</h3>
+                    </h3>
                     <ul class="list-disc pl-5 space-y-3 text-gray-400 text-sm">
-                        <li>I’m passionate about creating responsive, skill-driven, and captivating core gameplay.</li>
-                        <li>Fulfilling and rewarding progression systems backed by data analytics and solid math.</li>
-                        <li>Gaining more loot, levelling up, unlocking abilities, and becoming more powerful.</li>
-                        <li>Simple, scalable, and intuitive build crafting opportunities.</li>
-                        <li>Games that balance depth with simplicity, offering satisfying decision-making and intriguing
-                            challenges.</li>
+                        <li>Clean, scalable software architecture that holds up under pressure.</li>
+                        <li>AI systems that actually work end-to-end in production.</li>
+                        <li>Progression systems backed by solid math and data analytics.</li>
                         <li>The intersection of hardware precision and software engineering.</li>
-                        <li>Making interesting decisions on what cards, buffs, or abilities to take that have a large
-                            impact on the outcome.</li>
-                        <li>Polished, free-to-play mobile experiences.</li>
+                        <li>Core gameplay loops that are simple to learn but hard to master.</li>
+                        <li>Making meaningful decisions — whether in a card game, a build, or a system design.</li>
+                        <li>Polished, free-to-play mobile experiences that respect the player.</li>
                     </ul>
                 </div>
             </div>
@@ -1450,10 +1450,9 @@ User Query (Gradio UI)
                     <span class="text-blue-500">⚡</span> Beyond the Screen
                 </h3>
                 <p class="text-sm text-gray-400 leading-relaxed text-justify">
-                    Outside of coding and game development, I am deeply interested in racing and I am a marshall at
-                    TOSFED. I am an avid sim racing rig enthusiast, combining my love for automotive precision with
-                    virtual environments. I also spend time practising guitar and also really like to take a walk around
-                    the city as much as I can.
+                    Outside of coding, I'm a licensed motorsport marshal at TOSFED and an avid sim racing enthusiast —
+                    combining my love for automotive precision with virtual environments. I also play guitar and enjoy
+                    long walks around the city to disconnect.
                 </p>
             </div>
         </section>
